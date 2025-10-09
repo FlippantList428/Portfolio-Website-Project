@@ -1,7 +1,7 @@
-* {
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/** Ustawienie głównej czcionki **/
 
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /** Stylizowanie nagłówka **/
@@ -47,23 +47,39 @@ body {
     background-color: bisque;
 }
 
+/** Stylizowanie bloku <mian> **/
+
+main {
+    text-align: center;
+    color: brown;
+}
+
 /** Stylizowanie wpisów na blogu **/
 
 .wpis {
     background-color: whitesmoke;
-    text-align: center;
-    width: 70%;
+    text-align: left;
+    width: 80%;
     height: 300px;
-    float: left;
+    float: right;
+    margin: 0px;
+    padding: 0px;
 }
 
 /** Stylizowanie menu wpisów **/
 
 #menu-blog {
     background-color: chocolate;
-    width: 30%;
-    height: 300px;
-    float: right;
+    color: lightyellow;
+    width: 20%;
+    height: 600px;
+    float: left;
+    text-align: center;
+}
+
+.lista-menu {
+    text-align: left;
+    color: whitesmoke;
 }
 
 /** Stylizowanie stopki **/
@@ -74,4 +90,10 @@ footer {
     background-color: navy;
     font-size: larger;
     font-weight: 600;
+    text-align: right;
+    padding: 20px;
+}
+
+.socialmedia {
+    margin: 0 10px;
 }
