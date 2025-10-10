@@ -11,6 +11,7 @@ header {
     color: whitesmoke;
     height: 130px;
     width: 100%;
+    position: relative;
 }
 
 #powitanie {
