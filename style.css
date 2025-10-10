@@ -82,6 +82,21 @@ main {
     color: whitesmoke;
 }
 
+/** Stylizowanie wpisów **/
+/** Czym jest System operacyjny? **/
+
+.blog-header {
+    font-style: italic;
+    text-decoration: underline;
+    color: black;
+}
+
+.distro-list a, .distro-list{
+    color: black;
+    text-align: left;
+    font-weight: bold;
+}
+
 /** Stylizowanie stopki **/
 
 footer {
@@ -96,12 +111,4 @@ footer {
 
 .socialmedia {
     margin: 0 10px;
-}
-
-/** Czym jest System operacyjny? **/
-
-.blog-header {
-    font-style: italic;
-    text-decoration: underline;
-    color: black;
 }
