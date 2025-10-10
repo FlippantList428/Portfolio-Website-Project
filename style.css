@@ -11,7 +11,8 @@ header {
     color: whitesmoke;
     height: 130px;
     width: 100%;
-    position: fixed;
+    position: sticky;
+    top: 0;
 }
 
 #powitanie {
