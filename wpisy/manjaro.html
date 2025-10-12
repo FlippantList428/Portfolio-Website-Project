@@ -16,9 +16,57 @@
         <button class="menu" onclick= 'window.location = "../about-me.html"'>O Mnie</button>
       </nav>
     </header>
-
+        <!--Menu boczne blogu-->
+    <aside id="menu-blog">
+        <h1>Menu</h1>
+        <ul class="lista-menu">
+          <li><a href="#arch">Arch Linux</a></li>
+          <li><a href="#ubuntu">Ubuntu</a></li>
+          <li><a href="#mint">Linux Mint</a></li>
+          <li><a href="#debian">Debian</a></li>
+          <li><a href="#fedora">Fedora</a></li>
+          <li><a href="#manjaro">Manjaro</a></li>
+          <li><a href="#popos">PopOS</a></li>
+          <li><a href="#steamos">SteamOS</a></li>
+          <li><a href="#gentoo">Gentoo</a></li>
+        </ul>
+    </aside>
     <!--Zawartość główna-->
+    <div class="wpis">
+      <h2 id="manjaro">Czym jest Manjaro?</h2>
+<p>Manjaro to dystrybucja oparta na Arch Linux, ale przyjazna dla użytkownika. Łączy elastyczność Arch z prostotą instalacji i gotowymi środowiskami graficznymi.</p>
 
+<h2>Historia Manjaro</h2>
+<p>Projekt Manjaro rozpoczął się w 2011 roku. Celem było stworzenie dystrybucji z mocą Arch, ale przyjaznej dla użytkowników bez doświadczenia w terminalu.</p>
+
+<h2>Instalacja</h2>
+<p>Manjaro oferuje graficzny instalator, który umożliwia łatwą instalację systemu i środowiska graficznego. Kroki obejmują:</p>
+<ul>
+<li>Wybór języka i strefy czasowej.</li>
+<li>Partycjonowanie dysku.</li>
+<li>Tworzenie konta użytkownika.</li>
+<li>Instalacja systemu i aktualizacji.</li>
+<li>Wybór środowiska graficznego (XFCE, KDE, GNOME).</li>
+</ul>
+
+<h2>System Pakietów</h2>
+<p>Manjaro korzysta z menedżera pakietów <strong>pacman</strong> oraz repozytoriów własnych, w tym AUR, co umożliwia instalację praktycznie każdego oprogramowania.</p>
+
+<h2>Zalety Manjaro</h2>
+<ul>
+<li>Łatwiejsza instalacja niż Arch.</li>
+<li>Gotowe środowiska graficzne.</li>
+<li>Dostęp do repozytoriów Arch i AUR.</li>
+<li>Rolling release z automatycznymi aktualizacjami.</li>
+</ul>
+
+<h2>Wady Manjaro</h2>
+<ul>
+<li>Mniej kontrolowany proces aktualizacji niż w czystym Arch Linux.</li>
+<li>Nieco większa złożoność niż Ubuntu czy Mint.</li>
+</ul>
+
+    </div>
     <!--Stopka-->
     <footer>
 
@@ -36,5 +84,10 @@
   </a>
       &copy; 2025 Linux Basis
     </footer>
+        <script>
+    function toggleMenu() {
+      document.getElementById('main-nav').classList.toggle('show');
+      }
+    </script>
 </body>
 </html>

@@ -101,6 +101,7 @@ main {
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
+    position: static;
 }
 
 #menu-blog a {

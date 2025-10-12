@@ -16,9 +16,56 @@
         <button class="menu" onclick= 'window.location = "../about-me.html"'>O Mnie</button>
       </nav>
     </header>
-
+        <!--Menu boczne blogu-->
+    <aside id="menu-blog">
+        <h1>Menu</h1>
+        <ul class="lista-menu">
+          <li><a href="#arch">Arch Linux</a></li>
+          <li><a href="#ubuntu">Ubuntu</a></li>
+          <li><a href="#mint">Linux Mint</a></li>
+          <li><a href="#debian">Debian</a></li>
+          <li><a href="#fedora">Fedora</a></li>
+          <li><a href="#manjaro">Manjaro</a></li>
+          <li><a href="#popos">PopOS</a></li>
+          <li><a href="#steamos">SteamOS</a></li>
+          <li><a href="#gentoo">Gentoo</a></li>
+        </ul>
+    </aside>
     <!--Zawartość główna-->
+    <div class="wpis">
+      <h2 id="steamos">Czym jest SteamOS?</h2>
+<p>SteamOS to system stworzony przez Valve, zoptymalizowany pod gry na PC i platformę Steam. Bazuje na Debianie i oferuje integrację z biblioteką Steam.</p>
 
+<h2>Historia SteamOS</h2>
+<p>SteamOS został wydany w 2013 roku jako część projektu Steam Machines. Jego celem było stworzenie Linuksa zoptymalizowanego do gier, z łatwym dostępem do Steam i kontrolerów.</p>
+
+<h2>Instalacja</h2>
+<p>SteamOS instaluje się za pomocą dedykowanego instalatora, który automatyzuje większość procesów:</p>
+<ul>
+<li>Wybór języka i strefy czasowej.</li>
+<li>Partycjonowanie dysku.</li>
+<li>Automatyczne instalowanie pakietów i sterowników do gier.</li>
+<li>Tworzenie konta Steam.</li>
+<li>Konfiguracja środowiska graficznego zoptymalizowanego pod gry.</li>
+</ul>
+
+<h2>System Pakietów</h2>
+<p>SteamOS korzysta z menedżera <strong>APT</strong> i repozytoriów Debiana, dodatkowo integrując oprogramowanie Steam i sterowniki graficzne.</p>
+
+<h2>Zalety SteamOS</h2>
+<ul>
+<li>Optymalizacja pod gry i Steam.</li>
+<li>Łatwy dostęp do bibliotek gier i kontrolerów.</li>
+<li>Stabilny system oparty na Debianie.</li>
+</ul>
+
+<h2>Wady SteamOS</h2>
+<ul>
+<li>Ograniczone zastosowania poza grami.</li>
+<li>Mniej popularny, więc wsparcie społeczności może być ograniczone.</li>
+</ul>
+
+    </div>
     <!--Stopka-->
     <footer>
 
@@ -36,5 +83,10 @@
   </a>
       &copy; 2025 Linux Basis
     </footer>
+        <script>
+    function toggleMenu() {
+      document.getElementById('main-nav').classList.toggle('show');
+      }
+    </script>
 </body>
 </html>

@@ -16,9 +16,57 @@
         <button class="menu" onclick= 'window.location = "../about-me.html"'>O Mnie</button>
       </nav>
     </header>
-
+          <!--Menu boczne blogu-->
+    <aside id="menu-blog">
+        <h1>Menu</h1>
+        <ul class="lista-menu">
+          <li><a href="#arch">Arch Linux</a></li>
+          <li><a href="#ubuntu">Ubuntu</a></li>
+          <li><a href="#mint">Linux Mint</a></li>
+          <li><a href="#debian">Debian</a></li>
+          <li><a href="#fedora">Fedora</a></li>
+          <li><a href="#manjaro">Manjaro</a></li>
+          <li><a href="#popos">PopOS</a></li>
+          <li><a href="#steamos">SteamOS</a></li>
+          <li><a href="#gentoo">Gentoo</a></li>
+        </ul>
+    </aside>
     <!--Zawartość główna-->
+    <div class="wpis">
+      <h2 id="mint">Czym jest Linux Mint?</h2>
+<p>Linux Mint to dystrybucja Linuksa oparta na Ubuntu, stworzona z myślą o prostocie, wygodzie i stabilności. Oferuje przyjazne środowisko graficzne i gotowe do użycia aplikacje.</p>
 
+<h2>Historia Linux Mint</h2>
+<p>Projekt Linux Mint rozpoczął się w 2006 roku. Jego celem było stworzenie dystrybucji Linuksa, która będzie łatwa w użyciu dla użytkowników przyzwyczajonych do Windowsa, z eleganckim interfejsem i stabilnym systemem.</p>
+
+<h2>Instalacja</h2>
+<p>Instalacja Linux Mint jest prosta i opiera się na graficznym instalatorze. Podstawowe kroki to:</p>
+<ul>
+<li>Wybór języka, strefy czasowej i klawiatury.</li>
+<li>Partycjonowanie dysku.</li>
+<li>Tworzenie użytkownika i hasła.</li>
+<li>Instalacja systemu i wstępne aktualizacje.</li>
+<li>Opcjonalna instalacja dodatkowego oprogramowania i kodeków multimedialnych.</li>
+</ul>
+
+<h2>System Pakietów</h2>
+<p>Linux Mint korzysta z menedżera pakietów <strong>APT</strong> oraz własnego menedżera <strong>Software Manager</strong>, który ułatwia instalację oprogramowania nawet początkującym użytkownikom.</p>
+
+<h2>Zalety Linux Mint</h2>
+<ul>
+<li>Przyjazny interfejs dla początkujących użytkowników.</li>
+<li>Stabilność i niezawodność dzięki bazie Ubuntu LTS.</li>
+<li>Gotowe do użycia środowisko graficzne i multimedia.</li>
+<li>Dobre wsparcie społeczności.</li>
+</ul>
+
+<h2>Wady Linux Mint</h2>
+<ul>
+<li>Mniejsza elastyczność niż Arch Linux.</li>
+<li>Wersje środowiska Cinnamon mogą być wymagające dla starszego sprzętu.</li>
+</ul>
+
+    </div>
     <!--Stopka-->
     <footer>
 
@@ -36,5 +84,10 @@
   </a>
       &copy; 2025 Linux Basis
     </footer>
+        <script>
+    function toggleMenu() {
+      document.getElementById('main-nav').classList.toggle('show');
+      }
+    </script>
 </body>
 </html>

@@ -16,9 +16,58 @@
         <button class="menu" onclick= 'window.location = "../about-me.html"'>O Mnie</button>
       </nav>
     </header>
-
+        <!--Menu boczne blogu-->
+    <aside id="menu-blog">
+        <h1>Menu</h1>
+        <ul class="lista-menu">
+          <li><a href="#arch">Arch Linux</a></li>
+          <li><a href="#ubuntu">Ubuntu</a></li>
+          <li><a href="#mint">Linux Mint</a></li>
+          <li><a href="#debian">Debian</a></li>
+          <li><a href="#fedora">Fedora</a></li>
+          <li><a href="#manjaro">Manjaro</a></li>
+          <li><a href="#popos">PopOS</a></li>
+          <li><a href="#steamos">SteamOS</a></li>
+          <li><a href="#gentoo">Gentoo</a></li>
+        </ul>
+    </aside>
     <!--Zawartość główna-->
+    <div class="wpis">
+      <h2 id="gentoo">Czym jest Gentoo?</h2>
+<p>Gentoo to dystrybucja Linuksa dla zaawansowanych użytkowników, pozwalająca na kompilację systemu i oprogramowania dostosowanego do własnego sprzętu.</p>
 
+<h2>Historia Gentoo</h2>
+<p>Gentoo został stworzony w 2002 roku przez Daniela Robbinsa. Celem było stworzenie maksymalnie elastycznej dystrybucji, której wydajność zależy od konfiguracji użytkownika.</p>
+
+<h2>Instalacja</h2>
+<p>Instalacja Gentoo jest wymagająca i opiera się głównie na wierszu poleceń:</p>
+<ul>
+<li>Partycjonowanie i formatowanie dysku.</li>
+<li>Instalacja minimalnego systemu.</li>
+<li>Konfiguracja kernela i środowiska.</li>
+<li>Kompilacja pakietów z źródeł przy użyciu <em>Portage</em>.</li>
+<li>Dodanie użytkowników i ustawienie uprawnień.</li>
+</ul>
+
+<h2>System Pakietów</h2>
+<p>Gentoo używa systemu Portage, który kompiluje pakiety ze źródeł, umożliwiając pełną kontrolę nad opcjami i optymalizacją oprogramowania.</p>
+
+<h2>Zalety Gentoo</h2>
+<ul>
+<li>Pełna kontrola nad systemem i pakietami.</li>
+<li>Wysoka wydajność dzięki kompilacji ze źródeł.</li>
+<li>Elastyczność i możliwość dostosowania do własnych potrzeb.</li>
+<li>Doskonała nauka systemu Linuksa.</li>
+</ul>
+
+<h2>Wady Gentoo</h2>
+<ul>
+<li>Bardzo czasochłonna instalacja i konfiguracja.</li>
+<li>Wymaga dużej wiedzy i cierpliwości.</li>
+<li>Mniej przyjazna dla początkujących użytkowników.</li>
+</ul>
+
+    </div>
     <!--Stopka-->
     <footer>
 
@@ -36,5 +85,10 @@
   </a>
       &copy; 2025 Linux Basis
     </footer>
+        <script>
+    function toggleMenu() {
+      document.getElementById('main-nav').classList.toggle('show');
+      }
+    </script>
 </body>
 </html>

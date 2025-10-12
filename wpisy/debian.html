@@ -16,9 +16,57 @@
         <button class="menu" onclick= 'window.location = "../about-me.html"'>O Mnie</button>
       </nav>
     </header>
-
+            <!--Menu boczne blogu-->
+    <aside id="menu-blog">
+        <h1>Menu</h1>
+        <ul class="lista-menu">
+          <li><a href="#arch">Arch Linux</a></li>
+          <li><a href="#ubuntu">Ubuntu</a></li>
+          <li><a href="#mint">Linux Mint</a></li>
+          <li><a href="#debian">Debian</a></li>
+          <li><a href="#fedora">Fedora</a></li>
+          <li><a href="#manjaro">Manjaro</a></li>
+          <li><a href="#popos">PopOS</a></li>
+          <li><a href="#steamos">SteamOS</a></li>
+          <li><a href="#gentoo">Gentoo</a></li>
+        </ul>
+    </aside>
     <!--Zawartość główna-->
+    <div class="wpis">
+      <h2 id="debian">Czym jest Debian?</h2>
+<p>Debian to jedna z najstarszych i najbardziej stabilnych dystrybucji Linuksa. Ceniona za niezawodność, wszechstronność i solidne zarządzanie pakietami.</p>
 
+<h2>Historia Debian</h2>
+<p>Projekt Debian został rozpoczęty w 1993 roku przez Iana Murdocka. Debian jest podstawą wielu innych dystrybucji, w tym Ubuntu, i znany jest z konserwatywnego podejścia do aktualizacji pakietów.</p>
+
+<h2>Instalacja</h2>
+<p>Instalacja Debiana może odbywać się zarówno poprzez graficzny, jak i tekstowy instalator. Kroki obejmują:</p>
+<ul>
+<li>Wybór języka i strefy czasowej.</li>
+<li>Partycjonowanie dysku.</li>
+<li>Tworzenie użytkownika i hasła.</li>
+<li>Instalacja podstawowego systemu i pakietów.</li>
+<li>Opcjonalna instalacja środowiska graficznego.</li>
+</ul>
+
+<h2>System Pakietów</h2>
+<p>Debian korzysta z menedżera pakietów <strong>APT</strong> i pakietów .deb. Dzięki temu system jest łatwy w zarządzaniu i aktualizacji.</p>
+
+<h2>Zalety Debian</h2>
+<ul>
+<li>Stabilność i niezawodność.</li>
+<li>Szeroka baza pakietów.</li>
+<li>Dobre wsparcie społeczności.</li>
+<li>Podstawa dla wielu innych dystrybucji.</li>
+</ul>
+
+<h2>Wady Debian</h2>
+<ul>
+<li>Mniej nowoczesne wersje oprogramowania w stabilnej gałęzi.</li>
+<li>Proces instalacji i konfiguracji może być trudniejszy dla początkujących.</li>
+</ul>
+
+    </div>
     <!--Stopka-->
     <footer>
 
@@ -36,5 +84,10 @@
   </a>
       &copy; 2025 Linux Basis
     </footer>
+        <script>
+    function toggleMenu() {
+      document.getElementById('main-nav').classList.toggle('show');
+      }
+    </script>
 </body>
 </html>

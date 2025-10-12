@@ -16,9 +16,57 @@
         <button class="menu" onclick= 'window.location = "../about-me.html"'>O Mnie</button>
       </nav>
     </header>
-
+            <!--Menu boczne blogu-->
+    <aside id="menu-blog">
+        <h1>Menu</h1>
+        <ul class="lista-menu">
+          <li><a href="#arch">Arch Linux</a></li>
+          <li><a href="#ubuntu">Ubuntu</a></li>
+          <li><a href="#mint">Linux Mint</a></li>
+          <li><a href="#debian">Debian</a></li>
+          <li><a href="#fedora">Fedora</a></li>
+          <li><a href="#manjaro">Manjaro</a></li>
+          <li><a href="#popos">PopOS</a></li>
+          <li><a href="#steamos">SteamOS</a></li>
+          <li><a href="#gentoo">Gentoo</a></li>
+        </ul>
+    </aside>
     <!--Zawartość główna-->
+    <div class="wpis">
+      <h2 id="fedora">Czym jest Fedora?</h2>
+<p>Fedora to nowoczesna dystrybucja Linuksa, stworzona przez społeczność i wspierana przez Red Hat. Często służy do testowania nowych technologii Linuksa.</p>
 
+<h2>Historia Fedora</h2>
+<p>Projekt Fedora rozpoczął się w 2003 roku jako rozwinięcie Red Hat Linux. Celem było stworzenie innowacyjnej dystrybucji z nowymi technologiami i regularnymi wydaniami.</p>
+
+<h2>Instalacja</h2>
+<p>Fedora posiada graficzny instalator <strong>Anaconda</strong>, który prowadzi użytkownika krok po kroku przez proces instalacji:</p>
+<ul>
+<li>Wybór języka i strefy czasowej.</li>
+<li>Partycjonowanie dysku.</li>
+<li>Tworzenie konta użytkownika.</li>
+<li>Instalacja systemu i dodatkowego oprogramowania.</li>
+<li>Konfiguracja środowiska graficznego.</li>
+</ul>
+
+<h2>System Pakietów</h2>
+<p>Fedora używa menedżera pakietów <strong>DNF</strong> oraz pakietów .rpm. System jest często aktualizowany i wspiera najnowsze technologie Linuksa.</p>
+
+<h2>Zalety Fedora</h2>
+<ul>
+<li>Nowoczesne oprogramowanie i technologie.</li>
+<li>Dobre wsparcie społeczności i dokumentacji.</li>
+<li>Bezpieczny i aktualny system.</li>
+<li>Doskonały do nauki i testowania nowych rozwiązań.</li>
+</ul>
+
+<h2>Wady Fedora</h2>
+<ul>
+<li>Częste aktualizacje mogą być problematyczne dla początkujących.</li>
+<li>Mniej stabilna niż Debian czy Ubuntu LTS w dłuższym okresie.</li>
+</ul>
+
+    </div>
     <!--Stopka-->
     <footer>
 
@@ -36,5 +84,10 @@
   </a>
       &copy; 2025 Linux Basis
     </footer>
+        <script>
+    function toggleMenu() {
+      document.getElementById('main-nav').classList.toggle('show');
+      }
+    </script>
 </body>
 </html>

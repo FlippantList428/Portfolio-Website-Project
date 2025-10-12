@@ -16,9 +16,57 @@
         <button class="menu" onclick= 'window.location = "../about-me.html"'>O Mnie</button>
       </nav>
     </header>
-
+        <!--Menu boczne blogu-->
+    <aside id="menu-blog">
+        <h1>Menu</h1>
+        <ul class="lista-menu">
+          <li><a href="#arch">Arch Linux</a></li>
+          <li><a href="#ubuntu">Ubuntu</a></li>
+          <li><a href="#mint">Linux Mint</a></li>
+          <li><a href="#debian">Debian</a></li>
+          <li><a href="#fedora">Fedora</a></li>
+          <li><a href="#manjaro">Manjaro</a></li>
+          <li><a href="#popos">PopOS</a></li>
+          <li><a href="#steamos">SteamOS</a></li>
+          <li><a href="#gentoo">Gentoo</a></li>
+        </ul>
+    </aside>
     <!--Zawartość główna-->
+    <div class="wpis">
+      <h2 id="popos">Czym jest Pop!_OS?</h2>
+<p>Pop!_OS to dystrybucja stworzona przez firmę System76, skierowana do twórców, programistów i graczy. Oferuje zoptymalizowane środowisko i wsparcie dla GPU.</p>
 
+<h2>Historia Pop!_OS</h2>
+<p>Pop!_OS został wydany w 2017 roku. Bazuje na Ubuntu i ma na celu ułatwienie pracy profesjonalistom oraz zapewnienie płynnego doświadczenia w grach i projektach inżynieryjnych.</p>
+
+<h2>Instalacja</h2>
+<p>Instalacja Pop!_OS jest łatwa dzięki graficznemu instalatorowi:</p>
+<ul>
+<li>Wybór języka i strefy czasowej.</li>
+<li>Partycjonowanie dysku lub automatyczne opcje.</li>
+<li>Tworzenie konta użytkownika.</li>
+<li>Instalacja systemu z obsługą GPU (NVIDIA lub AMD).</li>
+<li>Opcjonalna instalacja dodatkowego oprogramowania.</li>
+</ul>
+
+<h2>System Pakietów</h2>
+<p>Pop!_OS korzysta z menedżera <strong>APT</strong> oraz własnych repozytoriów, oferując najnowsze wersje sterowników i oprogramowania do pracy i grania.</p>
+
+<h2>Zalety Pop!_OS</h2>
+<ul>
+<li>Przyjazny dla graczy i twórców.</li>
+<li>Optymalizacja pod GPU.</li>
+<li>Łatwe zarządzanie pakietami i aktualizacjami.</li>
+<li>Ładny i funkcjonalny interfejs.</li>
+</ul>
+
+<h2>Wady Pop!_OS</h2>
+<ul>
+<li>Mniej popularny niż Ubuntu, więc niektóre poradniki mogą być mniej dostępne.</li>
+<li>Ograniczone wsparcie dla starszego sprzętu.</li>
+</ul>
+
+    </div>
     <!--Stopka-->
     <footer>
 
@@ -35,6 +83,11 @@
     <img src="../ikony/linkedin.svg" alt="LinkedIn" style="width: 40px; height: 40px;">
   </a>
       &copy; 2025 Linux Basis
+          <script>
+    function toggleMenu() {
+      document.getElementById('main-nav').classList.toggle('show');
+      }
+    </script>
     </footer>
 </body>
 </html>

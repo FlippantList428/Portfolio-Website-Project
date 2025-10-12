@@ -17,8 +17,76 @@
       </nav>
     </header>
 
+      <!--Menu boczne blogu-->
+    <aside id="menu-blog">
+        <h1>Menu</h1>
+        <ul class="lista-menu">
+          <li><a href="#arch">Arch Linux</a></li>
+          <li><a href="#ubuntu">Ubuntu</a></li>
+          <li><a href="#mint">Linux Mint</a></li>
+          <li><a href="#debian">Debian</a></li>
+          <li><a href="#fedora">Fedora</a></li>
+          <li><a href="#manjaro">Manjaro</a></li>
+          <li><a href="#popos">PopOS</a></li>
+          <li><a href="#steamos">SteamOS</a></li>
+          <li><a href="#gentoo">Gentoo</a></li>
+        </ul>
+    </aside>
     <!--Zawartość główna-->
+    <div class="wpis">
+<h2>Czym jest Arch Linux?</h2>
+<p>Arch Linux to lekka i elastyczna dystrybucja Linuksa stworzona z myślą o zaawansowanych użytkownikach, którzy chcą pełnej kontroli nad swoim systemem. Zasłynęła dzięki filozofii <strong>KISS (Keep It Simple, Stupid)</strong> oraz modelowi <em>rolling release</em>, co oznacza, że system jest ciągle aktualizowany, bez konieczności reinstalacji przy nowych wydaniach.</p>
 
+
+<h2>Historia Arch Linux</h2>
+<p>Arch Linux został stworzony w 2002 roku przez Judda Vinetta. System szybko zyskał popularność dzięki prostocie, elastyczności i nowoczesnemu podejściu do zarządzania pakietami. Arch stał się fundamentem dla wielu dystrybucji pochodnych, takich jak Manjaro czy EndeavourOS.</p>
+
+
+<h2>Instalacja</h2>
+<p>Instalacja Arch Linux wymaga od użytkownika znajomości podstaw terminala i partycjonowania dysków. System oferuje minimalną bazę, co pozwala na stworzenie w pełni spersonalizowanego środowiska. Arch nie posiada domyślnego środowiska graficznego ani menedżera okien, więc użytkownik wybiera je samodzielnie.</p>
+<p>Proces instalacji składa się m.in. z:</p>
+<ul>
+<li>Partycjonowania dysku (GPT/MBR, LVM, RAID).</li>
+<li>Instalacji podstawowego systemu za pomocą <em>pacstrap</em>.</li>
+<li>Konfiguracji bootloadera, np. GRUB.</li>
+<li>Dodania użytkowników i ustawienia uprawnień.</li>
+<li>Instalacji środowiska graficznego i potrzebnych programów.</li>
+</ul>
+
+
+<h2>System Pakietów</h2>
+<p>Arch Linux korzysta z menedżera pakietów <strong>pacman</strong>, który pozwala na łatwe instalowanie, aktualizowanie i usuwanie oprogramowania. Pacman jest szybki i skuteczny, a jego pliki konfiguracyjne pozwalają na dokładną kontrolę nad pakietami.</p>
+<p>Dodatkowo Arch posiada ogromne repozytorium społecznościowe <strong>AUR (Arch User Repository)</strong>, umożliwiające instalację niemal każdego programu dostępnego w świecie open-source, nawet takich, które nie są oficjalnie wspierane w głównych repozytoriach.</p>
+
+
+<h2>Filozofia i Społeczność</h2>
+<p>Filozofia Arch Linux opiera się na prostocie, elegancji i pełnej kontroli użytkownika. Arch nie ukrywa działania systemu – wręcz przeciwnie, zachęca do poznania każdego jego elementu.</p>
+<p>Społeczność Arch jest bardzo aktywna, a dokumentacja <strong>Arch Wiki</strong> jest uważana za jedną z najlepszych w świecie Linuksa. Znajdziesz tam instrukcje instalacji, konfiguracji, rozwiązywania problemów oraz poradniki dla początkujących i zaawansowanych użytkowników.</p>
+
+
+<h2>Zalety Arch Linux</h2>
+<ul>
+<li>Pełna kontrola nad systemem i jego konfiguracją.</li>
+<li>Stałe aktualizacje dzięki modelowi rolling release.</li>
+<li>Dostęp do najnowszego oprogramowania i bibliotek.</li>
+<li>Ogromne wsparcie społeczności i bogata dokumentacja.</li>
+<li>Możliwość stworzenia systemu dopasowanego idealnie do własnych potrzeb.</li>
+<li>Elastyczność wyboru środowiska graficznego, menedżera okien i oprogramowania.</li>
+<li>Idealny do nauki i zrozumienia działania Linuksa.</li>
+</ul>
+
+
+<h2>Wady Arch Linux</h2>
+<ul>
+<li>Nie jest przyjazny dla początkujących.</li>
+<li>Wymaga czasu i cierpliwości przy instalacji i konfiguracji.</li>
+<li>Niektóre aktualizacje mogą wymagać ręcznej ingerencji w system.</li>
+</ul>
+
+
+<h2>Podsumowanie</h2>
+<p>Arch Linux to idealny wybór dla osób, które chcą poznać Linuksa od podstaw i mieć pełną kontrolę nad swoim środowiskiem. System daje ogromną satysfakcję z nauki, pozwala stworzyć w pełni spersonalizowany system i jest fundamentem dla wielu dystrybucji pochodnych.</p>
+</div>
     <!--Stopka-->
     <footer>
 
@@ -36,5 +104,10 @@
   </a>
       &copy; 2025 Linux Basis
     </footer>
+        <script>
+    function toggleMenu() {
+      document.getElementById('main-nav').classList.toggle('show');
+      }
+    </script>
 </body>
 </html>

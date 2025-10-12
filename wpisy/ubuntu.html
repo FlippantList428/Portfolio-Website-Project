@@ -17,7 +17,58 @@
       </nav>
     </header>
 
+          <!--Menu boczne blogu-->
+    <aside id="menu-blog">
+        <h1>Menu</h1>
+        <ul class="lista-menu">
+          <li><a href="#arch">Arch Linux</a></li>
+          <li><a href="#ubuntu">Ubuntu</a></li>
+          <li><a href="#mint">Linux Mint</a></li>
+          <li><a href="#debian">Debian</a></li>
+          <li><a href="#fedora">Fedora</a></li>
+          <li><a href="#manjaro">Manjaro</a></li>
+          <li><a href="#popos">PopOS</a></li>
+          <li><a href="#steamos">SteamOS</a></li>
+          <li><a href="#gentoo">Gentoo</a></li>
+        </ul>
+    </aside>
     <!--Zawartość główna-->
+    <div class="wpis">
+    <h2 id="ubuntu">Czym jest Ubuntu?</h2>
+<p>Ubuntu to jedna z najpopularniejszych dystrybucji Linuksa, przyjazna dla początkujących użytkowników. Jest oparta na Debianie i znana z prostoty instalacji oraz wsparcia dla szerokiego spektrum sprzętu.</p>
+
+<h2>Historia Ubuntu</h2>
+<p>Ubuntu zostało stworzone w 2004 roku przez Marka Shuttlewortha i firmę Canonical. Celem było stworzenie systemu Linuksowego przyjaznego dla nowych użytkowników, z regularnymi wydaniami i łatwym dostępem do pakietów.</p>
+
+<h2>Instalacja</h2>
+<p>Instalacja Ubuntu jest stosunkowo prosta dzięki graficznemu instalatorowi. Proces obejmuje:</p>
+<ul>
+<li>Wybór języka i strefy czasowej.</li>
+<li>Partycjonowanie dysku.</li>
+<li>Tworzenie użytkownika i hasła.</li>
+<li>Instalację systemu i aktualizacji.</li>
+<li>Opcjonalnie instalację dodatkowego oprogramowania.</li>
+</ul>
+
+<h2>System Pakietów</h2>
+<p>Ubuntu korzysta z menedżera pakietów <strong>APT</strong> oraz repozytoriów Debiana. Dodatkowo posiada własne PPA (Personal Package Archives) umożliwiające instalację najnowszych wersji oprogramowania.</p>
+
+<h2>Zalety Ubuntu</h2>
+<ul>
+<li>Łatwość użycia i instalacji.</li>
+<li>Szerokie wsparcie społeczności i dokumentacji.</li>
+<li>Dobre wsparcie sprzętowe.</li>
+<li>Regularne aktualizacje i wsparcie długoterminowe (LTS).</li>
+<li>Duża liczba dostępnego oprogramowania.</li>
+</ul>
+
+<h2>Wady Ubuntu</h2>
+<ul>
+<li>Mniej elastyczny niż Arch Linux dla zaawansowanych użytkowników.</li>
+<li>Domyślne środowisko graficzne może być ciężkie na starszych komputerach.</li>
+<li>Czasem aktualizacje mogą wprowadzać zmiany w interfejsie.</li>
+</ul>
+</div>
 
     <!--Stopka-->
     <footer>
@@ -36,5 +87,10 @@
   </a>
       &copy; 2025 Linux Basis
     </footer>
+        <script>
+    function toggleMenu() {
+      document.getElementById('main-nav').classList.toggle('show');
+      }
+    </script>
 </body>
 </html>
