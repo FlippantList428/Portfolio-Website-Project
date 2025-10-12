@@ -20,6 +20,7 @@
     <button class="menu" onclick='window.location="index.html"'>Strona główna</button>
     <button class="menu" onclick='window.location="blog.html"'>Blog</button>
     <button class="menu" onclick='window.location="about-me.html"'>O Mnie</button>
+    <button class="menu" onclick='window.location="login.html"'>Zaloguj się</button>
   </nav>
 </header>
  
@@ -66,6 +67,41 @@
             <li><a href="blog.html#gentoo">Gentoo</a></li>
         </ul>
       </p>
+
+      <!--Przycisk "Czytaj dalej"-->
+      <!--odnośnik do blog.html-->
+      <button class="menu" onclick="window.location='blog.html'">Czytaj dalej!</button>
+
+      <!--Nwesletter-->
+      <section id="newsletter">
+        <h2>Zapisz się do newsletter!</h2>
+        <p>Otrzymuj najnowsze informacje o nowych wpisach!</p>
+
+      <!--formularz - newsletter-->
+      <form id="newsletterform">
+        <input type="email" id="email" placeholder="Adres e-mail" required>
+        <button type="submit">Zapisz się!</button>
+      </form>
+
+      <!--Informacja zwrotna-->
+      <p id="succesMsg" style="color: green;"></p>
+      </section>
+
+      <!--Skrypt dla newsletter-->
+      <script>
+        document.getElementById("newsletterform").addEventListener("submit", function(e){
+          e.preventDefault();
+          const email = document.getElementById("email").value;
+          const Msg = document.getElementById("SuccesMsg");
+
+          //symulacja zapisu (lokalnie)
+          if(email){
+            localStorage.setItem("newsletterEmail", email);
+            msg.textContent = "Dziękujemy za zapis! 📬";
+            e.target.reset();
+          }
+        });
+      </script>
     </main>
 
     <!--Stopka-->

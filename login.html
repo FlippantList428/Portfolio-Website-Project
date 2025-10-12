@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logowanie</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .login-container {
+      max-width: 400px;
+      margin: 120px auto;
+      padding: 25px;
+      background-color: #f3f3f3;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      background-color: navy;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #0044aa;
+    }
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="powitanie">Logowanie</h1>
+    <nav>
+      <button class="menu" onclick="window.location='index.html'">Strona główna</button>
+      <button class="menu" onclick="window.location='blog.html'">Blog</button>
+      <button class="menu" onclick="window.location='about-me.html'">O mnie</button>
+    </nav>
+  </header>
+
+  <div class="login-container">
+    <h2>Zaloguj się</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Nazwa użytkownika" required><br>
+      <input type="password" id="password" placeholder="Hasło" required><br>
+      <button type="submit">Zaloguj</button>
+      <p class="error" id="errorMsg"></p>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const error = document.getElementById("errorMsg");
+
+      // Prosty testowy login (bez backendu)
+      if(user === "admin" && pass === "1234"){
+        localStorage.setItem("loggedInUser", user);
+        window.location.href = "index.html";
+      } else {
+        error.textContent = "Nieprawidłowy login lub hasło!";
+      }
+    });
+  </script>
+</body>
+</html>
