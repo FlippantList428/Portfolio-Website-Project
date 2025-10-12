@@ -190,3 +190,51 @@ RESPONSYWNOŚĆ STRONY
     nav#main-nav.show { display: flex; }
     nav#main-nav button.menu { width: auto; text-align: center; background-color: darkorange; color: white; border-radius: 20px; margin: 5px 0; padding: 8px 15px; }
 }
+
+/** ============================
+SKALOWANIE
+============================ **/
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  line-height: 1.6;
+}
+
+#powitanie {
+  font-size: clamp(1.3rem, 2vw, 2rem);
+}
+
+.menu {
+  font-size: clamp(0.9rem, 1.3vw, 1.2rem);
+  padding: clamp(5px, 1vw, 10px) clamp(10px, 2vw, 15px);
+}
+
+.blog-header {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+p, li, a {
+  font-size: clamp(0.9rem, 1vw, 1.1rem);
+}
+
+footer {
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+}
+
+.socialmedia img {
+  width: clamp(25px, 4vw, 40px);
+  height: clamp(25px, 4vw, 40px);
+}
