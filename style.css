@@ -277,6 +277,22 @@ Newsletter (opcjonalnie)
     margin-left: 10px;
 }
 
+/* Nowy kontener Flexbox dla elementów formularza */
+.newsletter-form-container {
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie w poziomie */
+    align-items: center;     /* Wyśrodkowanie w pionie */
+    margin-top: 20px;
+    flex-wrap: wrap; /* Zapewnienie responsywności na małych ekranach */
+    gap: 10px; /* Dodaje odstęp między polem i przyciskiem */
+}
+
+.newsletter input:focus {
+    border-color: darkorange; /* Kolor granicy po kliknięciu/focusie */
+    box-shadow: 0 0 5px rgba(255, 140, 0, 0.5); /* Lekka pomarańczowa poświata */
+    outline: none; /* Usuwa domyślny niebieski zarys */
+}
+
 /* ============================
 Strona "O mnie"
 ============================ */
@@ -376,4 +392,85 @@ Animacje
     transform: translateY(-3px); /* Przesuwa element 3px do góry */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Dodaje wyraźny cień */
     cursor: pointer;
+}
+
+/* Animacja nagłówka */
+header {
+    transition: height 0.3s ease, box-shadow 0.3s ease;
+    z-index: 100;
+}
+
+header.scrolled {
+    height: 70px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Opcjonalnie: Zmniejszenie powitania, aby zmieściło się w mniejszym nagłówku */
+header.scrolled #powitanie {
+    padding: 10px 0;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    transition: padding 0.3s ease, font-size 0.3s ease;
+}
+
+/* ============================
+TRYB CIEMNY
+============================ */
+
+/* Kolory trybu ciemnego */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Zmiana kolorów tekstu i odnośników <a> */
+body.dark-mode a {
+    color: #90caf9;
+}
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
+    color: #bdbdbd; /* Jaśniejsze nagłówki */
+}
+
+/* Tło Nagłówka (może pozostać Navy, jeśli jest ciemne, lub zmienić na głębszy odcień) */
+body.dark-mode header {
+    background-color: #002240; 
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+body.dark-mode #powitanie {
+    color: #e0e0e0;
+}
+
+/* Treść główna i wpisy */
+body.dark-mode .wpis {
+    background-color: #1e1e1e; /* Ciemne tło wpisów */
+    color: #e0e0e0;
+}
+body.dark-mode .blog-header {
+    color: #e0e0e0;
+}
+
+/* Lewe menu (menu-blog) */
+body.dark-mode #menu-blog {
+    background-color: #331a00; /* Ciemniejszy odcień chocolate */
+    color: #e0e0e0;
+}
+body.dark-mode #menu-blog a {
+    color: #ffcc80; /* Jaśniejsze linki w menu bocznym */
+}
+
+/* Sekcje O Mnie i Umiejętności */
+body.dark-mode .opis, body.dark-mode .umiejetnosci {
+    background-color: #1e1e1e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Stopka */
+body.dark-mode footer {
+    background-color: #002240;
+}
+
+/* Przycisk przełączania (jeśli go dodamy) - użyjemy istniejących klas */
+/* Dodamy też płynne przejście kolorów dla lepszego efektu */
+body.dark-mode, 
+body.dark-mode * {
+    transition: background-color 0.5s ease, color 0.5s ease;
 }

@@ -1,4 +1,23 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // =======================================================
+    // === 1. LOGIKA ANIMACJI NAGŁÓWKA PRZY PRZEWIJANIU ===
+    // =======================================================
+    const header = document.querySelector('header');
+    
+    // Funkcja nasłuchująca przewijanie strony
+    window.addEventListener('scroll', () => {
+        // Sprawdź, czy przewinięto stronę więcej niż 50 pikseli
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // =======================================================
+    // === 2. LOGIKA LOGOWANIA I REJESTRACJI ===
+    // =======================================================
+    
     // === UCHWYTY DO ELEMENTÓW ===
     const authForm = document.getElementById("authForm");
     const toggleBtn = document.getElementById("toggleBtn");
@@ -68,8 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 return;
             }
 
-            // TUTAJ dodasz kod, który wyśle dane do Twojego backendu
-            // Na razie symulujemy sukces:
+            // Symulacja sukcesu rejestracji
             errorMsg.textContent = `Sukces! Użytkownik ${user} zarejestrowany (tymczasowo). Logowanie...`;
             errorMsg.style.color = "green";
             
@@ -81,4 +99,43 @@ document.addEventListener("DOMContentLoaded", function() {
             }, 2000);
         }
     });
-});
+
+    // =======================================================
+    // === 3. LOGIKA TRYBU CIEMNEGO ===
+    // =======================================================
+
+    const toggleButton = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    // 1. Sprawdź, czy użytkownik ma zapisany tryb w pamięci lokalnej
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-mode');
+        if (toggleButton) {
+            toggleButton.textContent = 'Tryb Jasny';
+        }
+    } else if (savedTheme === 'light') {
+        body.classList.remove('dark-mode');
+        if (toggleButton) {
+            toggleButton.textContent = 'Tryb Ciemny';
+        }
+    }
+
+    // 2. Obsługa kliknięcia przycisku
+    if (toggleButton) {
+        toggleButton.addEventListener('click', () => {
+            // Przełącz klasę na ciele strony
+            body.classList.toggle('dark-mode');
+
+            // Zapisz wybór użytkownika w localStorage
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                toggleButton.textContent = 'Tryb Jasny';
+            } else {
+                localStorage.setItem('theme', 'light');
+                toggleButton.textContent = 'Tryb Ciemny';
+            }
+        });
+    }
+
+}); // Koniec DOMContentLoaded

@@ -22,6 +22,11 @@
     <button class="menu" onclick='window.location="blog.html"'>Blog</button>
     <button class="menu" onclick='window.location="about-me.html"'>O Mnie</button>
     <button class="menu" onclick='window.location="login.html"'>Zaloguj się</button>
+    <!--Przełącznik trybu ciemnego-->
+    <!-- do naprawienia :)-->
+     <!--
+    <button id="darkModeToggle" class="menu">Tryb Ciemny</button>
+      -->
   </nav>
 </header>
  
@@ -80,8 +85,10 @@
 
       <!--formularz - newsletter-->
       <form id="newsletterform">
-        <input type="email" id="email" placeholder="Adres e-mail" required>
-        <button type="submit">Zapisz się!</button>
+        <div class="newsletter-form-container">
+          <input type="email" id="email" placeholder="Adres e-mail" required>
+          <button type="submit">Zapisz się!</button>
+        </div>
       </form>
 
       <!--Informacja zwrotna-->
@@ -92,14 +99,21 @@
       <script>
         document.getElementById("newsletterform").addEventListener("submit", function(e){
           e.preventDefault();
+          
+          // Ujednolicono nazwę zmiennej do odczytu elementu wiadomości
           const email = document.getElementById("email").value;
-          const Msg = document.getElementById("SuccesMsg");
+          const msgElement = document.getElementById("succesMsg");
 
-          //symulacja zapisu (lokalnie)
+          // symulacja zapisu (lokalnie)
           if(email){
             localStorage.setItem("newsletterEmail", email);
-            msg.textContent = "Dziękujemy za zapis! 📬";
+            msgElement.textContent = "Dziękujemy za zapis! 📬"; // Użycie poprawnej zmiennej
             e.target.reset();
+            
+            // Opcjonalnie: usunięcie wiadomości po 5 sekundach
+            setTimeout(() => {
+                msgElement.textContent = "";
+            }, 5000);
           }
         });
       </script>
@@ -128,6 +142,7 @@
       document.getElementById('main-nav').classList.toggle('show');
       }
     </script>
+    <script src="auth.js"></script>
 
   </body>
 </html>
