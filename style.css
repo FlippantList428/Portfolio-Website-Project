@@ -336,3 +336,44 @@ Strona "O mnie"
         padding: 8px 12px;
     }
 }
+
+/* ============================
+Animacje
+============================ */
+
+/* Animacje menu */
+.menu {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.menu:hover {
+    background-color: #ff8c00;
+    transform: scale(1.05);
+}
+
+/* Animacja powitalna */
+@keyframes slideInFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Zaczyna 20px wyżej */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);    /* Kończy w normalnej pozycji */
+    }
+}
+
+#powitanie {
+    animation: slideInFade 1s ease-out forwards;
+}
+
+/* Animacje przejścia */
+.skills li {
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.skills li:hover {
+    transform: translateY(-3px); /* Przesuwa element 3px do góry */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Dodaje wyraźny cień */
+    cursor: pointer;
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Logowanie</title>
+  <title>Logowanie / Rejestracja</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,30 +17,27 @@
   </header>
 
   <div class="login-container">
-    <h2>Zaloguj się</h2>
-    <form id="loginForm">
+    <h2 id="form-title">Zaloguj się</h2>
+    
+    <form id="authForm">
+      <input type="email" id="email" placeholder="Adres e-mail" required style="display: none;"><br>
       <input type="text" id="username" placeholder="Nazwa użytkownika" required><br>
       <input type="password" id="password" placeholder="Hasło" required><br>
-      <button type="submit">Zaloguj</button>
+      <input type="password" id="confirmPassword" placeholder="Potwierdź hasło" style="display: none;"><br>
+      
+      <button type="submit" id="submitBtn">Zaloguj</button>
       <p class="error" id="errorMsg"></p>
     </form>
+    
+    <hr style="margin: 20px 0;">
+    
+    <p>
+        <span id="switchText">Nie masz konta?</span>
+        <button id="toggleBtn" class="menu" style="margin-top: 10px; padding: 10px 15px;">Zarejestruj się</button>
+    </p>
+
   </div>
-
-  <script>
-    document.getElementById("loginForm").addEventListener("submit", function(e){
-      e.preventDefault();
-      const user = document.getElementById("username").value;
-      const pass = document.getElementById("password").value;
-      const error = document.getElementById("errorMsg");
-
-      // Prosty testowy login (bez backendu)
-      if(user === "admin" && pass === "1234"){
-        localStorage.setItem("loggedInUser", user);
-        window.location.href = "index.html";
-      } else {
-        error.textContent = "Nieprawidłowy login lub hasło!";
-      }
-    });
-  </script>
-</body>
+  
+  <script src="auth.js"></script> 
+  </body>
 </html>
