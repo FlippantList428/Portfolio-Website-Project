@@ -7,16 +7,22 @@
     <link rel="icon" href="favicon/favicon.ico">
   </head>
   <body>
-    <!--Nagłówek-->
-    <header>
-      <h1 id="powitanie">Linux Basis</h1>
-      <nav>
-        <button class="menu" onclick = 'window.location = "index.html"'>Strona główna</button>
-        <button class="menu" onclick= 'window.location = "blog.html"'>Blog</button>
-        <button class="menu" onclick= 'window.location = "about-me.html"'>O Mnie</button>
-      </nav>
-    </header>
-    
+   <!--Nagłówek-->
+<header>
+  <h1 id="powitanie">Linux Basis</h1>
+  
+  <!-- Hamburger -->
+  <div class="hamburger" onclick="toggleMenu()">
+    &#9776; <!-- ikona hamburgera -->
+  </div>
+
+  <nav id="main-nav">
+    <button class="menu" onclick='window.location="index.html"'>Strona główna</button>
+    <button class="menu" onclick='window.location="blog.html"'>Blog</button>
+    <button class="menu" onclick='window.location="about-me.html"'>O Mnie</button>
+  </nav>
+</header>
+ 
     <!--Wprowadzenie do Linux-->
     <!--Omówienie systemów operacyjnych-->
     <main>
@@ -79,5 +85,12 @@
   </a>
       &copy; 2025 Linux Basis
     </footer>
+    <!--Menu Hamburgerowe-->
+    <script>
+    function toggleMenu() {
+      document.getElementById('main-nav').classList.toggle('show');
+      }
+    </script>
+
   </body>
 </html>

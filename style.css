@@ -1,11 +1,9 @@
 /** Ustawienie głównej czcionki **/
-
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /** Stylizowanie nagłówka **/
-
 header {
     background-color: navy;
     color: whitesmoke;
@@ -13,6 +11,10 @@ header {
     width: 100%;
     position: sticky;
     top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
 }
 
 #powitanie {
@@ -21,8 +23,29 @@ header {
     float: left;
 }
 
-/** Stylizowanie paska navigacyjnego **/
+/** Hamburger menu - ukryty na PC **/
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    background-color: navy;
+    padding: 10px 15px;
+    border-radius: 5px;
+    user-select: none;
+}
 
+/** Hamburger menu - pozycja **/
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/** Stylizowanie paska navigacyjnego **/
 nav {
     background-color: navy;
     display: flex;
@@ -32,7 +55,6 @@ nav {
 }
 
 /** Stylizowanie przycisków w <nav> **/
-
 .menu {
     background-color: darkorange;
     color: white;
@@ -41,16 +63,16 @@ nav {
     font-size: larger;
     border-radius: 20px;
     margin-top: 20px;
+    padding: 8px 15px;
+    cursor: pointer;
 }
 
 /** Stylizowanie ciała strony <body> **/
-
 body {
     background-color: bisque;
 }
 
-/** Stylizowanie bloku <mian> **/
-
+/** Stylizowanie bloku <main> **/
 main {
     text-align: center;
     color: brown;
@@ -96,22 +118,19 @@ main {
 }
 
 /** Stylizowanie wpisów **/
-/** Czym jest System operacyjny? **/
-
 .blog-header {
     font-style: italic;
     text-decoration: underline;
     color: black;
 }
 
-.distro-list a, .distro-list, a{
+.distro-list a, .distro-list, a {
     color: black;
     text-align: left;
     font-weight: bold;
 }
 
 /** Stylizowanie stopki **/
-
 footer {
     clear: both;
     color: whitesmoke;
@@ -124,4 +143,49 @@ footer {
 
 .socialmedia {
     margin: 0 10px;
+}
+
+/** ============================
+RESPONSYWNOŚĆ STRONY
+============================ **/
+
+/* Duże ekrany (monitory, laptopy) */
+@media (min-width: 1201px) {
+    #menu-blog { width: 20%; }
+    .wpis { width: 80%; }
+}
+
+/* Tablety w poziomie */
+@media (max-width: 1200px) and (min-width: 769px) {
+    header { height: auto; text-align: center; }
+    nav { justify-content: center; padding: 20px; }
+    #powitanie { float: none; font-size: 1.6rem; }
+    .wpis { width: 70%; }
+    #menu-blog { width: 30%; }
+}
+
+/* Tablety w pionie */
+@media (max-width: 768px) and (min-width: 601px) {
+    nav { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+    .menu { font-size: 1rem; padding: 8px 15px; }
+    #menu-blog, .wpis { width: 100%; min-height: auto; }
+    footer { text-align: center; }
+    .hamburger { display: block; margin: 10px auto 0 auto; }
+    nav#main-nav { display: none; flex-direction: column; align-items: center; gap: 10px; width: 100%; }
+    nav#main-nav.show { display: flex; }
+}
+
+/* Smartfony */
+@media (max-width: 600px) {
+    body { font-size: 0.9rem; }
+    nav { flex-direction: column; align-items: center; padding: 10px; }
+    .menu { width: 90%; margin: 5px 0; font-size: 1rem; }
+    #powitanie { float: none; font-size: 1.3rem; padding: 10px; }
+    #menu-blog, .wpis { width: 100%; padding: 15px; min-height: auto; }
+    footer { text-align: center; font-size: 1rem; }
+    .socialmedia img { width: 30px; height: 30px; }
+    .hamburger { display: block; margin: 10px auto 0 auto; }
+    nav#main-nav { display: none; flex-direction: column; align-items: center; gap: 10px; width: 100%; }
+    nav#main-nav.show { display: flex; }
+    nav#main-nav button.menu { width: auto; text-align: center; background-color: darkorange; color: white; border-radius: 20px; margin: 5px 0; padding: 8px 15px; }
 }
