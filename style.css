@@ -104,7 +104,7 @@ main {
     color: black;
 }
 
-.distro-list a, .distro-list{
+.distro-list a, .distro-list, a{
     color: black;
     text-align: left;
     font-weight: bold;
