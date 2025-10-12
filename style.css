@@ -1,9 +1,33 @@
+/* ============================
+GŁÓWNE USTAWIENIA
+============================ */
+
 /* Ustawienie głównej czcionki */
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
 }
 
-/* Stylizowanie nagłówka */
+/* Stylizowanie ciała strony <body> */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    line-height: 1.6;
+    background-color: bisque;
+}
+
+/* Globalny styl dla wszystkich linków (CELOWY STYL) */
+a {
+    color: black;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* ============================
+Nagłówek i menu
+============================ */
 header {
     background-color: navy;
     color: whitesmoke;
@@ -20,7 +44,7 @@ header {
 #powitanie {
     text-align: center;
     padding: 30px;
-    float: left;
+    font-size: clamp(1.3rem, 2vw, 2rem);
 }
 
 /* Hamburger menu - ukryty na PC */
@@ -35,17 +59,7 @@ header {
     user-select: none;
 }
 
-/* Hamburger menu - pozycja */
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-
-/* Stylizowanie paska navigacyjnego */
+/* Stylizowanie paska nawigacyjnego */
 nav {
     background-color: navy;
     display: flex;
@@ -59,37 +73,23 @@ nav {
     background-color: darkorange;
     color: white;
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: larger;
+    font-size: clamp(0.9rem, 1.3vw, 1.2rem);
     border-radius: 20px;
     margin-top: 20px;
-    padding: 8px 15px;
+    padding: clamp(5px, 1vw, 10px) clamp(10px, 2vw, 15px);
     cursor: pointer;
+    border: none;
 }
 
-
-/* Stylizowanie ciała strony <body> */
-body {
-    background-color: bisque;
-}
+/* ============================
+GŁÓWNA ZAWARTOŚĆ
+============================ */
 
 /* Stylizowanie bloku <main> */
+/* Usunięto float: right; aby uprościć zarządzanie układem w media queries */
 main {
     text-align: center;
     color: brown;
-    float: right;
-}
-
-/* Stylizowanie wpisów na blogu */
-.wpis {
-    background-color: whitesmoke;
-    text-align: center;
-    width: 80%;
-    min-height: auto;
-    float: right;
-    margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
 }
 
 /* Stylizowanie menu wpisów */
@@ -98,17 +98,16 @@ main {
     color: lightyellow;
     width: 20%;
     min-height: auto;
-    float: left;
+    float: left; /* Zostawione do układu kolumnowego na szerokich ekranach */
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
-    position: static;
 }
 
 #menu-blog a {
     display: block;
     text-align: left;
-    color: white;
+    color: white; /* Nadpisuje globalny styl, aby linki w menu były białe */
     text-decoration: underline;
     margin-bottom: 10px;
 }
@@ -119,149 +118,221 @@ main {
     margin: 10px 0;
 }
 
-/* Stylizowanie wpisów */
+/* Stylizowanie wpisów na blogu */
+.wpis {
+    background-color: whitesmoke;
+    text-align: center;
+    width: 80%;
+    min-height: auto;
+    float: right; /* Zostawione do układu kolumnowego na szerokich ekranach */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Stylizowanie nagłówków wpisów */
 .blog-header {
     font-style: italic;
     text-decoration: underline;
     color: black;
+    font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
-.distro-list a, .distro-list, a {
-    color: black;
-    text-align: left;
-    font-weight: bold;
+/* Stylizacja list i linków - .distro-list już jest czarne i pogrubione przez globalne 'a' */
+.distro-list {
+    /* Tu możesz dodać style specyficzne dla kontenera listy, jeśli potrzebne */
 }
 
-/* Stylizowanie stopki */
+/* ============================
+Stopka
+============================ */
 footer {
     clear: both;
     color: whitesmoke;
     background-color: navy;
-    font-size: larger;
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
     font-weight: 600;
     text-align: right;
     padding: 20px;
 }
 
-.socialmedia {
+.socialmedia img {
+    width: clamp(25px, 4vw, 40px);
+    height: clamp(25px, 4vw, 40px);
     margin: 0 10px;
 }
 
-/** ============================
+/* ============================
 RESPONSYWNOŚĆ STRONY
-============================ **/
+============================ */
 
-/* Duże ekrany (monitory, laptopy) */
+/* Duże ekrany (monitory, laptopy) - min-width: 1201px */
 @media (min-width: 1201px) {
-    #menu-blog { width: 20%; }
-    .wpis { width: 80%; }
+    #menu-blog { width: 20%; float: left; }
+    .wpis { width: 80%; float: right; }
 }
 
-/* Tablety w poziomie */
+/* Tablety w poziomie - max-width: 1200px and min-width: 769px */
 @media (max-width: 1200px) and (min-width: 769px) {
-    header { height: auto; text-align: center; }
+    header { height: auto; display: flex; flex-direction: column; text-align: center; }
     nav { justify-content: center; padding: 20px; }
-    #powitanie { float: none; font-size: 1.6rem; }
-    .wpis { width: 70%; }
-    #menu-blog { width: 30%; }
+    #powitanie { font-size: 1.6rem; padding: 10px 0; }
+    .wpis { width: 70%; float: right; }
+    #menu-blog { width: 30%; float: left; }
 }
 
-/* Tablety w pionie */
-@media (max-width: 768px) and (min-width: 601px) {
-    nav { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-    .menu { font-size: 1rem; padding: 8px 15px; }
-    #menu-blog, .wpis { width: 100%; min-height: auto; }
+/* Tablety w pionie i Smartfony - max-width: 768px (Wspólne ustawienia) */
+@media (max-width: 768px) {
+    #menu-blog, .wpis { width: 100%; float: none; min-height: auto; }
     footer { text-align: center; }
     .hamburger { display: block; margin: 10px auto 0 auto; }
-    nav#main-nav { display: none; flex-direction: column; align-items: center; gap: 10px; width: 100%; }
+    /* Menu jest domyślnie ukryte, klasa .show jest dodawana przez JS */
+    nav#main-nav { display: none; flex-direction: column; align-items: center; gap: 10px; width: 100%; padding: 10px; }
     nav#main-nav.show { display: flex; }
 }
 
-/* Smartfony */
+/* Tablety w pionie - max-width: 768px and min-width: 601px */
+@media (max-width: 768px) and (min-width: 601px) {
+    nav#main-nav { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+    .menu { font-size: 1rem; padding: 8px 15px; margin-top: 10px; }
+}
+
+/* Smartfony - max-width: 600px */
 @media (max-width: 600px) {
     body { font-size: 0.9rem; }
-    nav { flex-direction: column; align-items: center; padding: 10px; }
+    header { height: auto; flex-direction: column; }
+    #powitanie { font-size: 1.3rem; padding: 10px 0; }
     .menu { width: 90%; margin: 5px 0; font-size: 1rem; }
-    #powitanie { float: none; font-size: 1.3rem; padding: 10px; }
-    #menu-blog, .wpis { width: 100%; padding: 15px; min-height: auto; }
-    footer { text-align: center; font-size: 1rem; }
+    #menu-blog, .wpis { padding: 15px; }
+    footer { font-size: 1rem; }
     .socialmedia img { width: 30px; height: 30px; }
-    .hamburger { display: block; margin: 10px auto 0 auto; }
-    nav#main-nav { display: none; flex-direction: column; align-items: center; gap: 10px; width: 100%; }
-    nav#main-nav.show { display: flex; }
-    nav#main-nav button.menu { width: auto; text-align: center; background-color: darkorange; color: white; border-radius: 20px; margin: 5px 0; padding: 8px 15px; }
+    nav#main-nav button.menu { width: auto; }
 }
 
-/** ============================
-SKALOWANIE
-============================ **/
+/* ============================
+Style formularzy i sekcji informacyjnych - Zoptymalizowane i pogrupowane
+============================ */
 
-html {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+/* Grupowanie styli dla kontenerów z cieniem */
+.login-container, .opis, .umiejetnosci {
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-*, *::before, *::after {
-  box-sizing: inherit;
-  max-width: 100%;
+/* Grupowanie styli dla przycisków */
+.login-container button, .newsletter button {
+    background-color: navy;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  font-size: clamp(0.9rem, 1.2vw, 1rem);
-  line-height: 1.6;
+.login-container button:hover, .newsletter button:hover {
+    background-color: #0044aa;
 }
 
-#powitanie {
-  font-size: clamp(1.3rem, 2vw, 2rem);
+/* ============================
+Styl logowania
+============================ */
+.login-container {
+    max-width: 400px;
+    margin: 120px auto;
+    padding: 25px;
+    background-color: #f3f3f3;
+    text-align: center;
 }
 
-.menu {
-  font-size: clamp(0.9rem, 1.3vw, 1.2rem);
-  padding: clamp(5px, 1vw, 10px) clamp(10px, 2vw, 15px);
+.login-container input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
 }
 
-.blog-header {
-  font-size: clamp(1rem, 2vw, 1.5rem);
+.login-container .error {
+    color: red;
+    font-size: 0.9em;
 }
 
-p, li, a {
-  font-size: clamp(0.9rem, 1vw, 1.1rem);
-}
-
-footer {
-  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
-}
-
-.socialmedia img {
-  width: clamp(25px, 4vw, 40px);
-  height: clamp(25px, 4vw, 40px);
-}
-
-/* Newsletter */
+/* ============================
+Newsletter (opcjonalnie)
+============================ */
 .newsletter {
-  text-align: center;
-  background-color: #f5f5f5;
-  padding: 40px 0;
-  border-top: 3px solid navy;
+    text-align: center;
+    background-color: #f5f5f5;
+    padding: 40px 0;
+    border-top: 3px solid navy;
 }
 .newsletter input {
-  padding: 10px;
-  width: 250px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+    padding: 10px;
+    width: 250px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
 }
 .newsletter button {
-  background-color: navy;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-left: 10px;
+    margin-left: 10px;
 }
-.newsletter button:hover {
-  background-color: #0044aa;
+
+/* ============================
+Strona "O mnie"
+============================ */
+.opis {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fefefe;
+}
+
+.opis h2, .umiejetnosci h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    color: navy;
+    margin-bottom: 15px;
+}
+
+.opis p {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Sekcja umiejętności */
+.umiejetnosci {
+    max-width: 800px;
+    margin: 30px auto 50px auto;
+    padding: 20px;
+    background-color: #fefefe;
+}
+
+.skills {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skills li {
+    background-color: darkorange;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+}
+
+/* Responsywność dla "O mnie" (dla ekranów max-width: 768px) */
+@media (max-width: 768px) {
+    .opis, .umiejetnosci {
+        margin: 30px 15px;
+        padding: 15px;
+    }
+    .opis h2, .umiejetnosci h2 {
+        font-size: clamp(1.3rem, 3vw, 1.6rem);
+    }
+    .skills li {
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        padding: 8px 12px;
+    }
 }
