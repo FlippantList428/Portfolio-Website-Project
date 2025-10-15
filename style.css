@@ -394,22 +394,80 @@ Animacje
     cursor: pointer;
 }
 
-/* Animacja nagłówka */
+/* ============================
+Animacja nawigacji wraz z headerem (poprawiona wersja)
+============================ */
 header {
-    transition: height 0.3s ease, box-shadow 0.3s ease;
-    z-index: 100;
+    background-color: navy;
+    color: whitesmoke;
+    height: 130px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    transition: all 0.4s ease;
+    z-index: 1000;
 }
 
+/* Efekt przewinięcia */
 header.scrolled {
-    height: 70px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    height: 80px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* Opcjonalnie: Zmniejszenie powitania, aby zmieściło się w mniejszym nagłówku */
+/* Nawigacja */
+nav {
+    background-color: navy;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 40px;
+    transition: all 0.3s ease;
+}
+
+header.scrolled nav {
+    padding: 10px 20px;
+    gap: 10px;
+    transform: scale(0.9);
+    transform-origin: right center;
+}
+
+/* Przyciski menu */
+.menu {
+    background-color: darkorange;
+    color: white;
+    text-align: center;
+    font-size: clamp(0.9rem, 1.3vw, 1.2rem);
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+header.scrolled .menu {
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    padding: 6px 15px;
+    border-radius: 12px;
+    transform: scale(0.9);
+}
+
+/* Powitanie */
+#powitanie {
+    text-align: center;
+    padding: 30px;
+    font-size: clamp(1.3rem, 2vw, 2rem);
+    transition: all 0.3s ease;
+}
+
 header.scrolled #powitanie {
+    font-size: clamp(1rem, 1.3vw, 1.4rem);
     padding: 10px 0;
-    font-size: clamp(1rem, 1.5vw, 1.5rem);
-    transition: padding 0.3s ease, font-size 0.3s ease;
+    transform: scale(0.95);
 }
 
 /* ============================
@@ -473,4 +531,61 @@ body.dark-mode footer {
 body.dark-mode, 
 body.dark-mode * {
     transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/**#######################
+DARK MODE
+#######################**/
+/* Kontener przełącznika */
+.dark-mode-toggle {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    margin-right: 20px; /* np. żeby było po prawej w nagłówku */
+}
+
+/* Ukrycie checkboxa */
+.dark-mode-toggle input {
+    display: none;
+}
+
+/* Etykieta jako suwak */
+.dark-mode-toggle label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ccc;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    height: 100%;
+    padding: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Ikony księżyc/słońce */
+.dark-mode-toggle .icon {
+    font-size: 16px;
+    z-index: 2;
+}
+
+/* Kula przesuwana */
+.dark-mode-toggle .ball {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s ease all;
+}
+
+/* Checkbox włączony = tryb ciemny */
+.dark-mode-toggle input:checked + label .ball {
+    transform: translateX(30px); /* przesunięcie kuli na prawą stronę */
+}
+
+.dark-mode-toggle input:checked + label {
+    background-color: #444; /* tło suwaka w trybie ciemnym */
 }

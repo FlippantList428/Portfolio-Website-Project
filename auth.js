@@ -1,12 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
+
     // =======================================================
-    // === 1. LOGIKA ANIMACJI NAGŁÓWKA PRZY PRZEWIJANIU ===
+    // === 1. ANIMACJA NAGŁÓWKA PRZY PRZEWIJANIU ===
     // =======================================================
     const header = document.querySelector('header');
-    
-    // Funkcja nasłuchująca przewijanie strony
+
     window.addEventListener('scroll', () => {
-        // Sprawdź, czy przewinięto stronę więcej niż 50 pikseli
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
         } else {
@@ -15,127 +14,93 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // =======================================================
-    // === 2. LOGIKA LOGOWANIA I REJESTRACJI ===
+    // === 2. LOGOWANIE I REJESTRACJA ===
     // =======================================================
-    
-    // === UCHWYTY DO ELEMENTÓW ===
     const authForm = document.getElementById("authForm");
-    const toggleBtn = document.getElementById("toggleBtn");
-    const formTitle = document.getElementById("form-title");
-    const submitBtn = document.getElementById("submitBtn");
-    const errorMsg = document.getElementById("errorMsg");
-    const confirmPasswordInput = document.getElementById("confirmPassword");
-    const emailInput = document.getElementById("email");
-    const switchText = document.getElementById("switchText");
+    if(authForm){
+        const toggleBtn = document.getElementById("toggleBtn");
+        const formTitle = document.getElementById("form-title");
+        const submitBtn = document.getElementById("submitBtn");
+        const errorMsg = document.getElementById("errorMsg");
+        const confirmPasswordInput = document.getElementById("confirmPassword");
+        const emailInput = document.getElementById("email");
+        const switchText = document.getElementById("switchText");
 
-    let isLoginMode = true;
+        let isLoginMode = true;
 
-    // === FUNKCJA PRZEŁĄCZAJĄCA TRYBY ===
-    function toggleMode() {
-        isLoginMode = !isLoginMode;
-        errorMsg.textContent = ""; // Czyść błąd przy przełączaniu
+        function toggleMode() {
+            isLoginMode = !isLoginMode;
+            errorMsg.textContent = "";
 
-        if (isLoginMode) {
-            // Tryb LOGOWANIA
-            formTitle.textContent = "Zaloguj się";
-            submitBtn.textContent = "Zaloguj";
-            toggleBtn.textContent = "Zarejestruj się";
-            switchText.textContent = "Nie masz konta?";
-            
-            // Ukryj pola rejestracji
-            confirmPasswordInput.style.display = "none";
-            emailInput.style.display = "none";
-
-        } else {
-            // Tryb REJESTRACJI
-            formTitle.textContent = "Zarejestruj się";
-            submitBtn.textContent = "Zarejestruj";
-            toggleBtn.textContent = "Zaloguj się";
-            switchText.textContent = "Masz już konto?";
-            
-            // Pokaż pola rejestracji
-            confirmPasswordInput.style.display = "block";
-            emailInput.style.display = "block";
-        }
-    }
-
-    // === OBSŁUGA PRZEŁĄCZANIA PO KLIKNIĘCIU ===
-    toggleBtn.addEventListener("click", toggleMode);
-
-    // === OBSŁUGA WYSYŁANIA FORMULARZA ===
-    authForm.addEventListener("submit", function(e) {
-        e.preventDefault();
-        
-        const user = document.getElementById("username").value;
-        const pass = document.getElementById("password").value;
-        
-        if (isLoginMode) {
-            // LOGIKA LOGOWANIA (Tymczasowa)
-            if (user === "admin" && pass === "1234") {
-                localStorage.setItem("loggedInUser", user);
-                window.location.href = "index.html";
+            if (isLoginMode) {
+                formTitle.textContent = "Zaloguj się";
+                submitBtn.textContent = "Zaloguj";
+                toggleBtn.textContent = "Zarejestruj się";
+                switchText.textContent = "Nie masz konta?";
+                confirmPasswordInput.style.display = "none";
+                emailInput.style.display = "none";
             } else {
-                errorMsg.textContent = "Nieprawidłowa nazwa użytkownika lub hasło!";
+                formTitle.textContent = "Zarejestruj się";
+                submitBtn.textContent = "Zarejestruj";
+                toggleBtn.textContent = "Zaloguj się";
+                switchText.textContent = "Masz już konto?";
+                confirmPasswordInput.style.display = "block";
+                emailInput.style.display = "block";
             }
-        } else {
-            // LOGIKA REJESTRACJI (Tymczasowa)
-            const email = emailInput.value;
-            const confirmPass = confirmPasswordInput.value;
-
-            if (pass !== confirmPass) {
-                errorMsg.textContent = "Hasła nie są identyczne!";
-                return;
-            }
-
-            // Symulacja sukcesu rejestracji
-            errorMsg.textContent = `Sukces! Użytkownik ${user} zarejestrowany (tymczasowo). Logowanie...`;
-            errorMsg.style.color = "green";
-            
-            // Przełącz na logowanie po sukcesie (opcjonalnie)
-            setTimeout(() => {
-                toggleMode();
-                errorMsg.style.color = "red";
-                errorMsg.textContent = "";
-            }, 2000);
         }
-    });
 
-    // =======================================================
-    // === 3. LOGIKA TRYBU CIEMNEGO ===
-    // =======================================================
+        toggleBtn.addEventListener("click", toggleMode);
 
-    const toggleButton = document.getElementById('darkModeToggle');
-    const body = document.body;
+        authForm.addEventListener("submit", function(e){
+            e.preventDefault();
+            const user = document.getElementById("username").value;
+            const pass = document.getElementById("password").value;
 
-    // 1. Sprawdź, czy użytkownik ma zapisany tryb w pamięci lokalnej
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        body.classList.add('dark-mode');
-        if (toggleButton) {
-            toggleButton.textContent = 'Tryb Jasny';
-        }
-    } else if (savedTheme === 'light') {
-        body.classList.remove('dark-mode');
-        if (toggleButton) {
-            toggleButton.textContent = 'Tryb Ciemny';
-        }
-    }
-
-    // 2. Obsługa kliknięcia przycisku
-    if (toggleButton) {
-        toggleButton.addEventListener('click', () => {
-            // Przełącz klasę na ciele strony
-            body.classList.toggle('dark-mode');
-
-            // Zapisz wybór użytkownika w localStorage
-            if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-                toggleButton.textContent = 'Tryb Jasny';
+            if(isLoginMode){
+                if(user === "admin" && pass === "1234"){
+                    localStorage.setItem("loggedInUser", user);
+                    window.location.href = "index.html";
+                } else {
+                    errorMsg.textContent = "Nieprawidłowa nazwa użytkownika lub hasło!";
+                }
             } else {
-                localStorage.setItem('theme', 'light');
-                toggleButton.textContent = 'Tryb Ciemny';
+                const email = emailInput.value;
+                const confirmPass = confirmPasswordInput.value;
+
+                if(pass !== confirmPass){
+                    errorMsg.textContent = "Hasła nie są identyczne!";
+                    return;
+                }
+
+                errorMsg.textContent = `Sukces! Użytkownik ${user} zarejestrowany (tymczasowo). Logowanie...`;
+                errorMsg.style.color = "green";
+
+                setTimeout(() => {
+                    toggleMode();
+                    errorMsg.style.color = "red";
+                    errorMsg.textContent = "";
+                }, 2000);
             }
         });
     }
 
-}); // Koniec DOMContentLoaded
+    // =======================================================
+    // === 3. TRYB CIEMNY Z SUWAKIEM ===
+    // =======================================================
+    const darkToggle = document.getElementById('toggle-dark-mode');
+
+    if(darkToggle){
+        // przy zmianie checkboxa
+        darkToggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode', darkToggle.checked);
+            localStorage.setItem('darkMode', darkToggle.checked);
+        });
+
+        // przy ładowaniu strony, ustaw stan suwaka
+        if(localStorage.getItem('darkMode') === 'true'){
+            darkToggle.checked = true;
+            document.body.classList.add('dark-mode');
+        }
+    }
+
+});
