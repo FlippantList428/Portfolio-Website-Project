@@ -6,66 +6,66 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon/favicon.ico">
     <title>Linux Basis - Blog</title>
-</head>
-<body>
     <header>
       <h1 id="powitanie">Linux Basis</h1>
-      <nav>
-        <button class="menu" onclick = 'window.location = "index.html"'>Strona główna</button>
-        <button class="menu" onclick= 'window.location = "blog.html"'>Blog</button>
-        <button class="menu" onclick= 'window.location = "about-me.html"'>O Mnie</button>
+      <nav id="main-nav">
+        <button class="menu" onclick="window.location='index.html'">Strona główna</button>
+        <button class="menu" onclick="window.location='blog.html'">Blog</button>
+        <button class="menu" onclick="window.location='about-me.html'">O Mnie</button>
         <button class="menu" onclick="window.location='login.html'">Zaloguj się</button>
+      </nav>
+    </header>
       </nav>
     </header>
 
 
     <main>
+      <section class="posts-grid">
+        <div class="post-card">
+          <a href="wpisy/arch.html"><h3>Arch Linux</h3></a>
+          <p>Arch Linux to lekka i elastyczna dystrybucja dla zaawansowanych użytkowników — znana z filozofii KISS i modelu rolling release.</p>
+        </div>
 
-      <!--Menu boczne blogu-->
-    <aside id="menu-blog">
-        <h1>Menu</h1>
-        <ul class="lista-menu">
-          <li><a href="#arch">Arch Linux</a></li>
-          <li><a href="#ubuntu">Ubuntu</a></li>
-          <li><a href="#mint">Linux Mint</a></li>
-          <li><a href="#debian">Debian</a></li>
-          <li><a href="#fedora">Fedora</a></li>
-          <li><a href="#manjaro">Manjaro</a></li>
-          <li><a href="#popos">PopOS</a></li>
-          <li><a href="#steamos">SteamOS</a></li>
-          <li><a href="#gentoo">Gentoo</a></li>
-        </ul>
-    </aside>
+        <div class="post-card">
+          <a href="wpisy/ubuntu.html"><h3>Ubuntu</h3></a>
+          <p>Ubuntu to popularna, przyjazna dla początkujących dystrybucja oparta na Debianie, ceniona za prostotę instalacji i wsparcie sprzętowe.</p>
+        </div>
 
+        <div class="post-card">
+          <a href="wpisy/mint.html"><h3>Linux Mint</h3></a>
+          <p>Linux Mint to dystrybucja oparta na Ubuntu, skupiona na prostocie, wygodzie i gotowych rozwiązaniach dla użytkownika.</p>
+        </div>
 
-      <div class="wpis">
-        <h2 class="blog-header" id="arch"><a href="wpisy/arch.html">Arch Linux</a></h2>
-        <p>Arch Linux to lekkia, elastyczna dystrybucja dla zaawansowanych użytkowników. Jest znana z modelu rolling release i filozofii KISS (Keep It Simple, Stupid).</p>
+        <div class="post-card">
+          <a href="wpisy/debian.html"><h3>Debian</h3></a>
+          <p>Debian to stabilna i sprawdzona dystrybucja — fundament dla wielu innych systemów, ceniona za niezawodność.</p>
+        </div>
 
-        <h2 class="blog-header" id="ubuntu"><a href="wpisy/ubuntu.html">Ubuntu</a></h2>
-        <p>Ubuntu to popularna dystrybucja oparta na Debianie, przyjazna dla początkujących. Jest szeroko stosowana zarówno na komputerach osobistych, jak i serwerach.</p>
+        <div class="post-card">
+          <a href="wpisy/fedora.html"><h3>Fedora</h3></a>
+          <p>Fedora to nowoczesna dystrybucja, często używana do testowania najnowszych technologii Linuksa — szybkie wydania i DNF.</p>
+        </div>
 
-        <h2 class="blog-header" id="mint"><a href="wpisy/mint.html">Linux Mint</a></h2>
-        <p>Linux Mint to dystrybucja stworzona z myślą o prostocie i wygodzie użytkowania, oferująca elegancki interfejs i stabilność bazującą na Ubuntu.</p>
+        <div class="post-card">
+          <a href="wpisy/manjaro.html"><h3>Manjaro</h3></a>
+          <p>Manjaro łączy moc Arch z prostotą użytkowania — oferuje łatwiejszą instalację i gotowe środowiska graficzne.</p>
+        </div>
 
-        <h2 class="blog-header" id="debian"><a href="wpisy/debian.html">Debian</a></h2>
-        <p>Debian to stabilna i wszechstronna dystrybucja, znana z solidnej obsługi pakietów i konserwatywnego podejścia do aktualizacji. Jest podstawą wielu innych dystrybucji.</p>
+        <div class="post-card">
+          <a href="wpisy/popos.html"><h3>Pop!_OS</h3></a>
+          <p>Pop!_OS, stworzony przez System76, skierowany jest do twórców i graczy — z optymalizacjami GPU i wygodnym środowiskiem.</p>
+        </div>
 
-        <h2 class="blog-header" id="fedora"><a href="wpisy/fedora.html">Fedora</a></h2>
-        <p>Fedora to nowoczesna dystrybucja, często używana do testowania najnowszych technologii Linuksa. Charakteryzuje się częstymi aktualizacjami i wsparciem społeczności Red Hat.</p>
+        <div class="post-card">
+          <a href="wpisy/steamos.html"><h3>SteamOS</h3></a>
+          <p>SteamOS to system zoptymalizowany pod gry i integrację ze Steamem — oparty na Debianie z naciskiem na wydajność gier.</p>
+        </div>
 
-        <h2 class="blog-header" id="manjaro"><a href="wpisy/manjaro.html">Manjaro</a></h2>
-        <p>Manjaro to dystrybucja oparta na Arch Linux, ale przyjazna dla użytkownika. Oferuje prostszy proces instalacji i gotowe środowiska graficzne.</p>
-
-        <h2 class="blog-header" id="popos"><a href="wpisy/popos.html">PopOS</a></h2>
-        <p>Pop!_OS to dystrybucja stworzona przez firmę System76, skierowana do twórców i graczy. Oferuje zoptymalizowane środowisko i wsparcie dla GPU.</p>
-
-        <h2 class="blog-header" id="steamos"><a href="wpisy/steamos.html">SteamOS</a></h2>
-        <p>SteamOS to system stworzony przez Valve do grania na komputerach PC i konsolach Steam. Jest zoptymalizowany pod gry i integrację z platformą Steam.</p>
-
-        <h2 class="blog-header" id="gentoo"><a href="wpisy/gentoo.html">Gentoo</a></h2>
-        <p>Gentoo to dystrybucja dla zaawansowanych użytkowników, pozwalająca na kompilację oprogramowania dostosowanego do własnego sprzętu. Słynie z wysokiej wydajności i elastyczności.</p>
-      </div>
+        <div class="post-card">
+          <a href="wpisy/gentoo.html"><h3>Gentoo</h3></a>
+          <p>Gentoo oferuje kompilację pakietów ze źródeł i maksymalną kontrolę — to wybór dla zaawansowanych użytkowników poszukujących wydajności.</p>
+        </div>
+      </section>
     </main>
 
     
@@ -86,11 +86,6 @@
       &copy; 2025 Linux Basis
     </footer>
         <!--Menu Hamburgerowe-->
-    <script>
-    function toggleMenu() {
-      document.getElementById('main-nav').classList.toggle('show');
-      }
-    </script>
-    <script src="auth.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

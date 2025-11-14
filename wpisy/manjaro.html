@@ -1,52 +1,59 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <script src="../auth.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="icon" href="../favicon/favicon.ico">
-    <title>Linux Basis - Manjaro</title>
-</head>
-<body>
     <header>
       <h1 id="powitanie">Linux Basis</h1>
-      <nav>
-        <button class="menu" onclick = 'window.location = "../index.html"'>Strona główna</button>
-        <button class="menu" onclick= 'window.location = "../blog.html"'>Blog</button>
-        <button class="menu" onclick= 'window.location = "../about-me.html"'>O Mnie</button>
+      <nav id="main-nav">
+        <button class="menu" onclick="window.location='../index.html'">Strona główna</button>
+        <button class="menu" onclick="window.location='../blog.html'">Blog</button>
+        <button class="menu" onclick="window.location='../about-me.html'">O Mnie</button>
         <button class="menu" onclick="window.location='../login.html'">Zaloguj się</button>
       </nav>
     </header>
-        <!--Menu boczne blogu-->
-    <aside id="menu-blog">
-        <h1>Menu</h1>
-        <ul class="lista-menu">
-          <li><a href="../wpisy/arch.html">Arch Linux</a></li>
-          <li><a href="../wpisy/ubuntu.html">Ubuntu</a></li>
-          <li><a href="../wpisy/mint.html">Linux Mint</a></li>
-          <li><a href="../wpisy/debian.html">Debian</a></li>
-          <li><a href="../wpisy/fedora.html">Fedora</a></li>
-          <li><a href="../wpisy/manjaro.html">Manjaro</a></li>
-          <li><a href="../wpisy/popos.html">PopOS</a></li>
-          <li><a href="../wpisy/steamos.html">SteamOS</a></li>
-          <li><a href="../wpisy/gentoo.html">Gentoo</a></li>
-        </ul>
-    </aside>
-    <!--Zawartość główna-->
-    <div class="wpis">
-      <h2 id="manjaro">Czym jest Manjaro?</h2>
-<p>Manjaro to dystrybucja oparta na Arch Linux, ale przyjazna dla użytkownika. Łączy elastyczność Arch z prostotą instalacji i gotowymi środowiskami graficznymi.</p>
 
-<h2>Historia Manjaro</h2>
-<p>Projekt Manjaro rozpoczął się w 2011 roku. Celem było stworzenie dystrybucji z mocą Arch, ale przyjaznej dla użytkowników bez doświadczenia w terminalu.</p>
+    <main>
+      <div class="left-col">
+        <aside id="menu-blog">
+          <h2>Menu</h2>
+          <ul class="lista-menu">
+            <li><a href="../wpisy/arch.html">Arch Linux</a></li>
+            <li><a href="../wpisy/ubuntu.html">Ubuntu</a></li>
+            <li><a href="../wpisy/mint.html">Linux Mint</a></li>
+            <li><a href="../wpisy/debian.html">Debian</a></li>
+            <li><a href="../wpisy/fedora.html">Fedora</a></li>
+            <li><a href="../wpisy/manjaro.html">Manjaro</a></li>
+            <li><a href="../wpisy/popos.html">PopOS</a></li>
+            <li><a href="../wpisy/steamos.html">SteamOS</a></li>
+            <li><a href="../wpisy/gentoo.html">Gentoo</a></li>
+          </ul>
+        </aside>
+      </div>
 
-<h2>Instalacja</h2>
-<p>Manjaro oferuje graficzny instalator, który umożliwia łatwą instalację systemu i środowiska graficznego. Kroki obejmują:</p>
-<ul>
-<li>Wybór języka i strefy czasowej.</li>
-<li>Partycjonowanie dysku.</li>
-<li>Tworzenie konta użytkownika.</li>
+      <div class="wpis">
+        <h2 id="manjaro">Czym jest Manjaro?</h2>
+        <p>Manjaro to przyjazna dystrybucja oparta na Arch Linux, oferująca łatwiejszy proces instalacji i konfiguracji dla użytkowników...</p>
+      </div>
+    </main>
+
+    <!--Stopka-->
+    <footer>
+      <a href="https://facebook.com" target="_blank" class="socialmedia">
+        <img src="../ikony/facebook.svg" alt="Facebook" style="width: 40px; height: 40px;">
+      </a>
+      <a href="https://x.com/FlippantList428" target="_blank" class="socialmedia">
+        <img src="../ikony/twitter.svg" alt="Twitter" style="width: 40px; height: 40px;">
+      </a>
+      <a href="https://instagram.com" target="_blank" class="socialmedia">
+        <img src="../ikony/instagram.svg" alt="Instagram" style="width: 40px; height: 40px;">
+      </a>
+      <a href="https://linkedin.com" target="_blank" class="socialmedia">
+        <img src="../ikony/linkedin.svg" alt="LinkedIn" style="width: 40px; height: 40px;">
+      </a>
+      &copy; 2025 Linux Basis
+    </footer>
+    <script src="../main.js"></script>
+</body>
+</html>
 <li>Instalacja systemu i aktualizacji.</li>
 <li>Wybór środowiska graficznego (XFCE, KDE, GNOME).</li>
 </ul>
@@ -69,6 +76,8 @@
 </ul>
 
     </div>
+  </main>
+
     <!--Stopka-->
     <footer>
 
@@ -86,10 +95,6 @@
   </a>
       &copy; 2025 Linux Basis
     </footer>
-        <script>
-    function toggleMenu() {
-      document.getElementById('main-nav').classList.toggle('show');
-      }
-    </script>
-</body>
+    <script src="../main.js"></script>
+  </body>
 </html>

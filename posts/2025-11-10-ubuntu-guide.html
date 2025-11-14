@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Krótki przewodnik po Ubuntu — Linux Basis</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../favicon/favicon.ico">
+</head>
+<body>
+  <header>
+    <h1 id="powitanie">Linux Basis</h1>
+    <nav id="main-nav">
+      <button class="menu" onclick="window.location='../index.html'">Strona główna</button>
+      <button class="menu" onclick="window.location='../blog.html'">Blog</button>
+      <button class="menu" onclick="window.location='../about-me.html'">O Mnie</button>
+      <button class="menu" onclick="window.location='../login.html'">Zaloguj się</button>
+      <!-- dark mode toggle removed -->
+    </nav>
+  </header>
+
+  <main>
+    <div class="left-col">
+      <aside id="menu-blog">
+        <h2>Menu</h2>
+        <ul class="lista-menu">
+          <li><a href="../wpisy/arch.html">Arch</a></li>
+          <li><a href="../wpisy/ubuntu.html">Ubuntu</a></li>
+          <li><a href="../wpisy/mint.html">Mint</a></li>
+          <li><a href="../wpisy/debian.html">Debian</a></li>
+          <li><a href="../wpisy/fedora.html">Fedora</a></li>
+          <li><a href="../wpisy/manjaro.html">Manjaro</a></li>
+          <li><a href="../wpisy/popos.html">PopOS</a></li>
+          <li><a href="../wpisy/steamos.html">SteamOS</a></li>
+          <li><a href="../wpisy/gentoo.html">Gentoo</a></li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="wpis">
+      <article class="post-article">
+        <h2>Krótki przewodnik po Ubuntu</h2>
+        <p>Ubuntu to świetny wybór dla początkujących — stabilne, łatwe w instalacji i szeroko wspierane. W tym wpisie znajdziesz podstawowe kroki po instalacji i parę przydatnych poleceń.</p>
+        <h3>Po instalacji</h3>
+        <ol>
+          <li>Zaktualizuj system: <code>sudo apt update && sudo apt upgrade</code></li>
+          <li>Zainstaluj podstawowe narzędzia: <code>sudo apt install build-essential git curl</code></li>
+          <li>Skonfiguruj zaporę: <code>sudo ufw enable</code></li>
+        </ol>
+
+        <p><a href="../blog.html">Powrót do listy wpisów</a></p>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Linux Basis
+  </footer>
+  <script src="../main.js"></script>
+</body>
+</html>

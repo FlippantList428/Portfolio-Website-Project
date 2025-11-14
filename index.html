@@ -24,50 +24,16 @@
     <button class="menu" onclick='window.location="login.html"'>Zaloguj się</button>
     
     
-    <!--Przełącznik trybu ciemnego-->
-    <div class="dark-mode-toggle">
-      <input type="checkbox" id="toggle-dark-mode">
-      <label for="toggle-dark-mode">
-        <span class="icon sun">☀️</span>
-        <span class="icon moon">🌙</span>
-        <span class="ball"></span>
-      </label>
-    </div>
+    <!-- dark mode toggle removed -->
   </nav>
 </header>
  
-    <!--Wprowadzenie do Linux-->
-    <!--Omówienie systemów operacyjnych-->
+    <!--Wprowadzenie do Linux - nowa struktura: sidebar + content -->
     <main>
-      <h1 style="font-weight: bold;">Wprowadzenie</h1>
-      <h2 class="blog-header">Czym jest System operacyjny?</h2>
-      <p>System operacyjny to oprogramowanie, które pozwala komputerowi działać — zarządza plikami.
-        A także uruchamia programy i komunikuje się ze sprzętem<br> (takim jak procesor, pamięć RAM czy dysk twardy). — Bez systemu operacyjnego komputer byłby tylko pudełkiem z elektroniką.</p>
-        
-        <br>
-        <hr>
-        <br>
-      
-      <!--Wyjaśnienie Linuxa-->
-      <h2 class="blog-header">Czym jest Linux? - Proste wyjaśnienie dla każdego</h2>  
-      <p>Kiedy słyszysz słowo Linux, możesz pomyśleć o czymś trudnym, tajemniczym i zarezerwowanym tylko dla informatyków. Ale prawda jest taka, że Linux to system operacyjny, tak jak Windows czy macOS – tylko że otwarty i darmowy.</p>
-      <p>Linux różni się od Windowsa czy macOS-a w kilku ważnych aspektach:
-        <br>
-          1. Jest darmowy – możesz go pobrać, zainstalować i używać bez żadnych opłat.
-        <br>
-          2. Jest otwarty (open source) – jego kod źródłowy jest dostępny dla wszystkich. Każdy może zobaczyć, jak działa, i dostosować go do własnych potrzeb.
-        <br>
-          3. Jest bezpieczny – dzięki swojej budowie i aktywnej społeczności jest znacznie mniej podatny na wirusy i złośliwe oprogramowanie.
-        <br>
-          4. Jest lekki i szybki – Linux potrafi działać nawet na starszym sprzęcie, który nie poradziłby sobie z nowymi wersjami Windowsa.</p>
-
-      <!--CZym są dystybucje-->
-      <h2 class="blog-header">Dystrybucje – czyli różne „smaki” Linuxa</h2>
-      <p>
-        Linux nie jest jednym systemem – to raczej rodzina systemów.
-        Istnieją setki tzw. dystrybucji, czyli wersji Linuxa, które różnią się wyglądem, zastosowaniem i poziomem trudności.<br>
-        Najpopularniejsze to m.in.:
-        <ul class="distro-list">
+      <div class="left-col">
+        <aside id="menu-blog">
+          <h2>Dystrybucje</h2>
+          <ul class="distro-list lista-menu">
             <li><a href="blog.html#arch">Arch</a></li>
             <li><a href="blog.html#ubuntu">Ubuntu</a></li>
             <li><a href="blog.html#mint">Mint</a></li>
@@ -77,52 +43,49 @@
             <li><a href="blog.html#popos">PopOS</a></li>
             <li><a href="blog.html#steamos">SteamOS</a></li>
             <li><a href="blog.html#gentoo">Gentoo</a></li>
-        </ul>
-      </p>
+          </ul>
+        </aside>
 
-      <!--Przycisk "Czytaj dalej"-->
-      <!--odnośnik do blog.html-->
-      <button class="menu" onclick="window.location='blog.html'">Czytaj dalej!</button>
-
-      <!--Nwesletter-->
-      <section id="newsletter">
-        <h2>Zapisz się do newsletter!</h2>
-        <p>Otrzymuj najnowsze informacje o nowych wpisach!</p>
-
-      <!--formularz - newsletter-->
-      <form id="newsletterform">
-        <div class="newsletter-form-container">
-          <input type="email" id="email" placeholder="Adres e-mail" required>
-          <button type="submit">Zapisz się!</button>
+        <div class="ads">
+          <h3>Reklamy</h3>
+          <div class="ad">Twoja reklama tutaj</div>
+          <div class="ad">Sponsor</div>
         </div>
-      </form>
+      </div>
 
-      <!--Informacja zwrotna-->
-      <p id="succesMsg" style="color: green;"></p>
-      </section>
+      <div class="wpis">
+        <h1 style="font-weight: bold;">Wprowadzenie</h1>
+        <h2 class="blog-header">Czym jest system operacyjny?</h2>
+        <p>System operacyjny to oprogramowanie, które pozwala komputerowi działać — zarządza plikami i uruchamia programy, a także komunikuje się ze sprzętem (procesor, pamięć RAM, dysk). Bez systemu operacyjnego komputer byłby tylko pudełkiem z elektroniką.</p>
 
-      <!--Skrypt dla newsletter-->
-      <script>
-        document.getElementById("newsletterform").addEventListener("submit", function(e){
-          e.preventDefault();
-          
-          // Ujednolicono nazwę zmiennej do odczytu elementu wiadomości
-          const email = document.getElementById("email").value;
-          const msgElement = document.getElementById("succesMsg");
+        <hr>
 
-          // symulacja zapisu (lokalnie)
-          if(email){
-            localStorage.setItem("newsletterEmail", email);
-            msgElement.textContent = "Dziękujemy za zapis! 📬"; // Użycie poprawnej zmiennej
-            e.target.reset();
-            
-            // Opcjonalnie: usunięcie wiadomości po 5 sekundach
-            setTimeout(() => {
-                msgElement.textContent = "";
-            }, 5000);
-          }
-        });
-      </script>
+        <h2 class="blog-header">Czym jest Linux?</h2>
+        <p>Linux to system operacyjny, tak jak Windows czy macOS — z tą różnicą, że jest otwarty (open source) i często darmowy. Różni się m.in. tym, że:</p>
+        <ul>
+          <li>Jest darmowy — możesz go pobrać i używać bez opłat.</li>
+          <li>Jest otwarty — kod źródłowy dostępny dla każdego.</li>
+          <li>Jest bezpieczny dzięki aktywnej społeczności.</li>
+          <li>Może być lekki i działać na starszym sprzęcie.</li>
+        </ul>
+
+        <p><button class="menu" onclick="window.location='blog.html'">Czytaj dalej!</button></p>
+
+        <!-- Newsletter -->
+        <section id="newsletter">
+          <h2>Zapisz się do newsletter!</h2>
+          <p>Otrzymuj najnowsze informacje o nowych wpisach!</p>
+          <form id="newsletterform">
+            <div class="newsletter-form-container">
+              <input type="email" id="email" placeholder="Adres e-mail" required>
+              <button type="submit">Zapisz się!</button>
+            </div>
+          </form>
+          <p id="succesMsg" style="color: green;"></p>
+        </section>
+      </div>
+
+      <!-- Newsletter handled by main.js -->
     </main>
 
     <!--Stopka-->
@@ -143,12 +106,7 @@
       &copy; 2025 Linux Basis
     </footer>
     <!--Menu Hamburgerowe-->
-    <script>
-    function toggleMenu() {
-      document.getElementById('main-nav').classList.toggle('show');
-      }
-    </script>
-    <script src="auth.js"></script>
+    <script src="main.js"></script>
 
   </body>
 </html>

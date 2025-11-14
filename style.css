@@ -6,6 +6,8 @@ GŁÓWNE USTAWIENIA
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 /* Stylizowanie ciała strony <body> */
@@ -17,6 +19,10 @@ body {
     line-height: 1.6;
     background-color: bisque;
 }
+
+/* Layout helpers */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 18px; }
+.main-inner { width: 100%; max-width: 1200px; margin: 0 auto; box-sizing: border-box; }
 
 /* Globalny styl dla wszystkich linków (CELOWY STYL) */
 a {
@@ -43,7 +49,7 @@ header {
 
 #powitanie {
     text-align: center;
-    padding: 30px;
+    padding: 18px 0;
     font-size: clamp(1.3rem, 2vw, 2rem);
 }
 
@@ -88,20 +94,28 @@ GŁÓWNA ZAWARTOŚĆ
 /* Stylizowanie bloku <main> */
 /* Usunięto float: right; aby uprościć zarządzanie układem w media queries */
 main {
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap; /* ensure items wrap on small screens */
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    text-align: left;
     color: brown;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Stylizowanie menu wpisów */
 #menu-blog {
     background-color: chocolate;
     color: lightyellow;
-    width: 20%;
+    flex: 0 0 250px; /* fixed-ish sidebar on wide screens */
+    max-width: 300px;
     min-height: auto;
-    float: left; /* Zostawione do układu kolumnowego na szerokich ekranach */
-    text-align: center;
+    text-align: left;
     padding: 20px;
     box-sizing: border-box;
+    border-radius: 8px;
 }
 
 #menu-blog a {
@@ -121,14 +135,23 @@ main {
 /* Stylizowanie wpisów na blogu */
 .wpis {
     background-color: whitesmoke;
-    text-align: center;
-    width: 80%;
+    text-align: left;
+    flex: 1 1 600px; /* main content grows to fill remaining space */
     min-height: auto;
-    float: right; /* Zostawione do układu kolumnowego na szerokich ekranach */
     margin: 0;
-    padding: 20px;
+    padding: 24px;
     box-sizing: border-box;
+    border-radius: 8px;
 }
+
+.wpis h1, .wpis h2, .wpis h3 { margin-top: 0.6rem; margin-bottom: 0.6rem; }
+
+.post-card { padding: 18px; }
+
+header h1#powitanie { margin: 0; padding: 8px 0; }
+nav#main-nav { display: flex; gap: 12px; align-items: center; }
+
+footer { padding: 22px 18px; }
 
 /* Stylizowanie nagłówków wpisów */
 .blog-header {
@@ -140,7 +163,8 @@ main {
 
 /* Stylizacja list i linków - .distro-list już jest czarne i pogrubione przez globalne 'a' */
 .distro-list {
-    /* Tu możesz dodać style specyficzne dla kontenera listy, jeśli potrzebne */
+    /* Zapewnienie minimalnego stylu by uniknąć pustego bloku */
+    padding-left: 0.5rem;
 }
 
 /* ============================
@@ -168,8 +192,9 @@ RESPONSYWNOŚĆ STRONY
 
 /* Duże ekrany (monitory, laptopy) - min-width: 1201px */
 @media (min-width: 1201px) {
-    #menu-blog { width: 20%; float: left; }
-    .wpis { width: 80%; float: right; }
+    /* Wider screens: keep a clear sidebar/main split */
+    #menu-blog { flex: 0 0 20%; max-width: none; }
+    .wpis { flex: 1 1 80%; }
 }
 
 /* Tablety w poziomie - max-width: 1200px and min-width: 769px */
@@ -177,13 +202,14 @@ RESPONSYWNOŚĆ STRONY
     header { height: auto; display: flex; flex-direction: column; text-align: center; }
     nav { justify-content: center; padding: 20px; }
     #powitanie { font-size: 1.6rem; padding: 10px 0; }
-    .wpis { width: 70%; float: right; }
-    #menu-blog { width: 30%; float: left; }
+    .wpis { flex: 1 1 70%; }
+    #menu-blog { flex: 0 0 30%; }
 }
 
 /* Tablety w pionie i Smartfony - max-width: 768px (Wspólne ustawienia) */
 @media (max-width: 768px) {
-    #menu-blog, .wpis { width: 100%; float: none; min-height: auto; }
+    main { flex-direction: column; padding: 10px; }
+    #menu-blog, .wpis { flex: 1 1 100%; min-height: auto; }
     footer { text-align: center; }
     .hamburger { display: block; margin: 10px auto 0 auto; }
     /* Menu jest domyślnie ukryte, klasa .show jest dodawana przez JS */
@@ -395,6 +421,94 @@ Animacje
 }
 
 /* ============================
+Blog - grid post cards
+============================ */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.post-card {
+    background: whitesmoke;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.post-card h3 { margin-top: 0; }
+.post-card a { color: inherit; text-decoration: none; }
+.post-card p { color: #333; }
+
+/* Card hover/focus animation */
+.post-card {
+    transition: transform 220ms cubic-bezier(.2,.8,.2,1),
+                box-shadow 220ms cubic-bezier(.2,.8,.2,1),
+                background-color 220ms ease;
+}
+.post-card:hover,
+.post-card:focus-within {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.16);
+    background-color: #fffdfa;
+}
+.post-card:focus-within {
+    outline: 3px solid rgba(21,126,251,0.12);
+    outline-offset: 6px;
+}
+
+/* Force 3 columns on wide viewports */
+@media (min-width: 1100px) {
+    .posts-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ============================
+Index left/right layout and ads
+============================ */
+.left-col {
+    flex: 0 0 280px; /* sidebar width on wide screens */
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.left-col h2 {
+    margin: 0 0 8px 0;
+}
+
+.ads {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ads .ad {
+    background: #fff8e6;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+    font-size: 0.95rem;
+}
+
+/* (removed dark mode styles) */
+
+/* Ensure sidebar stacks on small screens */
+@media (max-width: 768px) {
+    .left-col, .wpis {
+        flex: 1 1 100%;
+    }
+    .left-col {
+        order: -1; /* put sidebar above main content on small screens */
+    }
+}
+
+/* ============================
 Animacja nawigacji wraz z headerem (poprawiona wersja)
 ============================ */
 header {
@@ -470,122 +584,4 @@ header.scrolled #powitanie {
     transform: scale(0.95);
 }
 
-/* ============================
-TRYB CIEMNY
-============================ */
-
-/* Kolory trybu ciemnego */
-body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-}
-
-/* Zmiana kolorów tekstu i odnośników <a> */
-body.dark-mode a {
-    color: #90caf9;
-}
-body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
-    color: #bdbdbd; /* Jaśniejsze nagłówki */
-}
-
-/* Tło Nagłówka (może pozostać Navy, jeśli jest ciemne, lub zmienić na głębszy odcień) */
-body.dark-mode header {
-    background-color: #002240; 
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
-}
-body.dark-mode #powitanie {
-    color: #e0e0e0;
-}
-
-/* Treść główna i wpisy */
-body.dark-mode .wpis {
-    background-color: #1e1e1e; /* Ciemne tło wpisów */
-    color: #e0e0e0;
-}
-body.dark-mode .blog-header {
-    color: #e0e0e0;
-}
-
-/* Lewe menu (menu-blog) */
-body.dark-mode #menu-blog {
-    background-color: #331a00; /* Ciemniejszy odcień chocolate */
-    color: #e0e0e0;
-}
-body.dark-mode #menu-blog a {
-    color: #ffcc80; /* Jaśniejsze linki w menu bocznym */
-}
-
-/* Sekcje O Mnie i Umiejętności */
-body.dark-mode .opis, body.dark-mode .umiejetnosci {
-    background-color: #1e1e1e;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-}
-
-/* Stopka */
-body.dark-mode footer {
-    background-color: #002240;
-}
-
-/* Przycisk przełączania (jeśli go dodamy) - użyjemy istniejących klas */
-/* Dodamy też płynne przejście kolorów dla lepszego efektu */
-body.dark-mode, 
-body.dark-mode * {
-    transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-/**#######################
-DARK MODE
-#######################**/
-/* Kontener przełącznika */
-.dark-mode-toggle {
-    position: relative;
-    width: 60px;
-    height: 30px;
-    margin-right: 20px; /* np. żeby było po prawej w nagłówku */
-}
-
-/* Ukrycie checkboxa */
-.dark-mode-toggle input {
-    display: none;
-}
-
-/* Etykieta jako suwak */
-.dark-mode-toggle label {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #ccc;
-    border-radius: 50px;
-    position: relative;
-    cursor: pointer;
-    height: 100%;
-    padding: 0 5px;
-    transition: background-color 0.3s ease;
-}
-
-/* Ikony księżyc/słońce */
-.dark-mode-toggle .icon {
-    font-size: 16px;
-    z-index: 2;
-}
-
-/* Kula przesuwana */
-.dark-mode-toggle .ball {
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 24px;
-    height: 24px;
-    background-color: white;
-    border-radius: 50%;
-    transition: 0.3s ease all;
-}
-
-/* Checkbox włączony = tryb ciemny */
-.dark-mode-toggle input:checked + label .ball {
-    transform: translateX(30px); /* przesunięcie kuli na prawą stronę */
-}
-
-.dark-mode-toggle input:checked + label {
-    background-color: #444; /* tło suwaka w trybie ciemnym */
-}
+/* Dark mode support removed */

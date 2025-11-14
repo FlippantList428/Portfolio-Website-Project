@@ -5,90 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" href="../favicon/favicon.ico">
-    <title>Linux Basis - SteamOS</title>
-</head>
-<body>
-    <header>
-      <h1 id="powitanie">Linux Basis</h1>
-      <nav>
-        <button class="menu" onclick = 'window.location = "../index.html"'>Strona główna</button>
-        <button class="menu" onclick= 'window.location = "../blog.html"'>Blog</button>
-        <button class="menu" onclick= 'window.location = "../about-me.html"'>O Mnie</button>
-        <button class="menu" onclick="window.location='../login.html'">Zaloguj się</button>
-      </nav>
-    </header>
-        <!--Menu boczne blogu-->
-    <aside id="menu-blog">
-        <h1>Menu</h1>
-        <ul class="lista-menu">
-          <li><a href="../wpisy/arch.html">Arch Linux</a></li>
-          <li><a href="../wpisy/ubuntu.html">Ubuntu</a></li>
-          <li><a href="../wpisy/mint.html">Linux Mint</a></li>
-          <li><a href="../wpisy/debian.html">Debian</a></li>
-          <li><a href="../wpisy/fedora.html">Fedora</a></li>
-          <li><a href="../wpisy/manjaro.html">Manjaro</a></li>
-          <li><a href="../wpisy/popos.html">PopOS</a></li>
-          <li><a href="../wpisy/steamos.html">SteamOS</a></li>
-          <li><a href="../wpisy/gentoo.html">Gentoo</a></li>
-        </ul>
-    </aside>
-    <!--Zawartość główna-->
-    <div class="wpis">
-      <h2 id="steamos">Czym jest SteamOS?</h2>
-<p>SteamOS to system stworzony przez Valve, zoptymalizowany pod gry na PC i platformę Steam. Bazuje na Debianie i oferuje integrację z biblioteką Steam.</p>
+        <title>Linux Basis - SteamOS</title>
+    </head>
+    <body>
+        <header>
+          <h1 id="powitanie">Linux Basis</h1>
+          <nav id="main-nav">
+            <button class="menu" onclick="window.location='../index.html'">Strona główna</button>
+            <button class="menu" onclick="window.location='../blog.html'">Blog</button>
+            <button class="menu" onclick="window.location='../about-me.html'">O Mnie</button>
+            <button class="menu" onclick="window.location='../login.html'">Zaloguj się</button>
+          </nav>
+        </header>
+      <main>
+        <div class="left-col">
+          <aside id="menu-blog">
+            <h2>Menu</h2>
+            <ul class="lista-menu">
+              <li><a href="../wpisy/arch.html">Arch Linux</a></li>
+              <li><a href="../wpisy/ubuntu.html">Ubuntu</a></li>
+              <li><a href="../wpisy/mint.html">Linux Mint</a></li>
+              <li><a href="../wpisy/debian.html">Debian</a></li>
+              <li><a href="../wpisy/fedora.html">Fedora</a></li>
+              <li><a href="../wpisy/manjaro.html">Manjaro</a></li>
+              <li><a href="../wpisy/popos.html">PopOS</a></li>
+              <li><a href="../wpisy/steamos.html">SteamOS</a></li>
+              <li><a href="../wpisy/gentoo.html">Gentoo</a></li>
+            </ul>
+          </aside>
+        </div>
 
-<h2>Historia SteamOS</h2>
-<p>SteamOS został wydany w 2013 roku jako część projektu Steam Machines. Jego celem było stworzenie Linuksa zoptymalizowanego do gier, z łatwym dostępem do Steam i kontrolerów.</p>
+        <div class="wpis">
+          <h2 id="steamos">Czym jest SteamOS?</h2>
+    <p>SteamOS to system stworzony przez Valve, zoptymalizowany pod gry na PC i platformę Steam. Bazuje na Debianie i oferuje integrację z biblioteką Steam.</p>
 
-<h2>Instalacja</h2>
-<p>SteamOS instaluje się za pomocą dedykowanego instalatora, który automatyzuje większość procesów:</p>
-<ul>
-<li>Wybór języka i strefy czasowej.</li>
-<li>Partycjonowanie dysku.</li>
-<li>Automatyczne instalowanie pakietów i sterowników do gier.</li>
-<li>Tworzenie konta Steam.</li>
-<li>Konfiguracja środowiska graficznego zoptymalizowanego pod gry.</li>
-</ul>
+    <h2>Historia SteamOS</h2>
+    <p>SteamOS został wydany w 2013 roku jako część projektu Steam Machines. Jego celem było stworzenie Linuksa zoptymalizowanego do gier, z łatwym dostępem do Steam i kontrolerów.</p>
 
-<h2>System Pakietów</h2>
-<p>SteamOS korzysta z menedżera <strong>APT</strong> i repozytoriów Debiana, dodatkowo integrując oprogramowanie Steam i sterowniki graficzne.</p>
+    <h2>Instalacja</h2>
+    <p>SteamOS instaluje się za pomocą dedykowanego instalatora, który automatyzuje większość procesów:</p>
+    <ul>
+    <li>Wybór języka i strefy czasowej.</li>
+    <li>Partycjonowanie dysku.</li>
+    <li>Automatyczne instalowanie pakietów i sterowników do gier.</li>
+    <li>Tworzenie konta Steam.</li>
+    <li>Konfiguracja środowiska graficznego zoptymalizowanego pod gry.</li>
+    </ul>
 
-<h2>Zalety SteamOS</h2>
-<ul>
-<li>Optymalizacja pod gry i Steam.</li>
-<li>Łatwy dostęp do bibliotek gier i kontrolerów.</li>
-<li>Stabilny system oparty na Debianie.</li>
-</ul>
+    <h2>System Pakietów</h2>
+    <p>SteamOS korzysta z menedżera <strong>APT</strong> i repozytoriów Debiana, dodatkowo integrując oprogramowanie Steam i sterowniki graficzne.</p>
 
-<h2>Wady SteamOS</h2>
-<ul>
-<li>Ograniczone zastosowania poza grami.</li>
-<li>Mniej popularny, więc wsparcie społeczności może być ograniczone.</li>
-</ul>
+    <h2>Zalety SteamOS</h2>
+    <ul>
+    <li>Optymalizacja pod gry i Steam.</li>
+    <li>Łatwy dostęp do bibliotek gier i kontrolerów.</li>
+    <li>Stabilny system oparty na Debianie.</li>
+    </ul>
 
-    </div>
-    <!--Stopka-->
-    <footer>
+    <h2>Wady SteamOS</h2>
+    <ul>
+    <li>Ograniczone zastosowania poza grami.</li>
+    <li>Mniej popularny, więc wsparcie społeczności może być ograniczone.</li>
+    </ul>
 
-  <a href="https://facebook.com" target="_blank" class="socialmedia">
-    <img src="../ikony/facebook.svg" alt="Facebook" style="width: 40px; height: 40px;">
-  </a>
-  <a href="https://x.com/FlippantList428" target="_blank" class="socialmedia">
-    <img src="../ikony/twitter.svg" alt="Twitter" style="width: 40px; height: 40px;">
-  </a>
-  <a href="https://instagram.com" target="_blank" class="socialmedia">
-    <img src="../ikony/instagram.svg" alt="Instagram" style="width: 40px; height: 40px;">
-  </a>
-  <a href="https://linkedin.com" target="_blank" class="socialmedia">
-    <img src="../ikony/linkedin.svg" alt="LinkedIn" style="width: 40px; height: 40px;">
-  </a>
-      &copy; 2025 Linux Basis
-    </footer>
-        <script>
-    function toggleMenu() {
-      document.getElementById('main-nav').classList.toggle('show');
-      }
-    </script>
-    <script src="../auth.js"></script>
-</body>
-</html>
+        </div>
+      </main>
+
+        <!--Stopka-->
+        <footer>
+
+      <a href="https://facebook.com" target="_blank" class="socialmedia">
+        <img src="../ikony/facebook.svg" alt="Facebook" style="width: 40px; height: 40px;">
+      </a>
+      <a href="https://x.com/FlippantList428" target="_blank" class="socialmedia">
+        <img src="../ikony/twitter.svg" alt="Twitter" style="width: 40px; height: 40px;">
+      </a>
+      <a href="https://instagram.com" target="_blank" class="socialmedia">
+        <img src="../ikony/instagram.svg" alt="Instagram" style="width: 40px; height: 40px;">
+      </a>
+      <a href="https://linkedin.com" target="_blank" class="socialmedia">
+        <img src="../ikony/linkedin.svg" alt="LinkedIn" style="width: 40px; height: 40px;">
+      </a>
+          &copy; 2025 Linux Basis
+        </footer>
+        <script src="../main.js"></script>
+      </body>
+    </html>

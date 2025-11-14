@@ -10,7 +10,7 @@
 <body>
     <header>
       <h1 id="powitanie">Linux Basis</h1>
-      <nav>
+      <nav id="main-nav">
         <button class="menu" onclick = 'window.location = "index.html"'>Strona główna</button>
         <button class="menu" onclick= 'window.location = "blog.html"'>Blog</button>
         <button class="menu" onclick= 'window.location = "about-me.html"'>O Mnie</button>
@@ -21,7 +21,7 @@
     <!--O Mnie-->
       <!--Opis-->
 
-        <div class="opis">
+  <div class="opis">
           <h2>Cześć! 👋</h2>
           <p>
             Nazywam się <strong>Kacper</strong> i interesuję się <em>informatyką, systemami Linux</em> oraz
@@ -64,11 +64,6 @@
       &copy; 2025 Linux Basis
     </footer>
         <!--Menu Hamburgerowe-->
-    <script>
-    function toggleMenu() {
-      document.getElementById('main-nav').classList.toggle('show');
-      }
-    </script>
-    <script src="auth.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

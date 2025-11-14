@@ -84,23 +84,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // =======================================================
-    // === 3. TRYB CIEMNY Z SUWAKIEM ===
-    // =======================================================
-    const darkToggle = document.getElementById('toggle-dark-mode');
-
-    if(darkToggle){
-        // przy zmianie checkboxa
-        darkToggle.addEventListener('change', () => {
-            document.body.classList.toggle('dark-mode', darkToggle.checked);
-            localStorage.setItem('darkMode', darkToggle.checked);
-        });
-
-        // przy ładowaniu strony, ustaw stan suwaka
-        if(localStorage.getItem('darkMode') === 'true'){
-            darkToggle.checked = true;
-            document.body.classList.add('dark-mode');
-        }
-    }
+    // Dark mode support removed from auth script
 
 });
